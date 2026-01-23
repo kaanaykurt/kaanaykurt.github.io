@@ -1,0 +1,169 @@
+---
+title: "Curriculum Vitae"
+page-layout: full
+format:
+  html:
+    css: cv.css
+---
+
+```{=html}
+<section class="cv-container">
+  <header class="cv-header">
+    <div class="cv-header-row">
+      <div class="cv-name">Kaan Aykurt</div>
+      <div class="cv-actions">
+        <a class="cv-button" href="files/cv.pdf" target="_blank" rel="noopener">Download PDF</a>
+      </div>
+    </div>
+    <div class="cv-tagline">PhD Candidate · AI-driven Networked Systems</div>
+    <div class="cv-subtag">Technical University of Munich</div>
+    <div class="cv-contact">
+      <span class="cv-contact-item">
+        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+        Munich, Germany
+      </span>
+      <a class="cv-contact-item" href="mailto:kaanaykurt@gmail.com">
+        <i class="bi bi-envelope" aria-hidden="true"></i>
+        kaanaykurt@gmail.com
+      </a>
+      <a class="cv-contact-item" href="https://www.linkedin.com/in/kaanaykurt/">
+        <i class="bi bi-linkedin" aria-hidden="true"></i>
+        linkedin.com/in/kaanaykurt
+      </a>
+      <a class="cv-contact-item" href="https://kaanaykurt.me">
+        <i class="bi bi-globe2" aria-hidden="true"></i>
+        kaanaykurt.me
+      </a>
+    </div>
+  </header>
+
+  <div class="cv-section">
+    <h2>Research Profile</h2>
+    <p class="cv-justify">
+      Ph.D. candidate working at the intersection of <strong>AI for Networking</strong> and
+      <strong>Networking for AI</strong>. I design agentic LLM workflows and benchmarking frameworks for autonomous networks, and study communication bottlenecks in large-scale AI/ML systems. My expertise includes reproducible benchmarking on hardware testbeds, transport layer analysis, and network modeling with Graph Neural Networks.
+    </p>
+  </div>
+
+  <div class="cv-section">
+    <h2>Experience</h2>
+
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Chair of Communication Networks, Technical University of Munich</div>
+        <div class="cv-entry-date">2022 – Now</div>
+      </div>
+      <div class="cv-entry-meta">Research and Teaching Assistant, Munich, Germany</div>
+      <ul>
+        <li>Developing agentic workflows for network troubleshooting, implementing the Model Context Protocol (MCP) for tool calling to interact with network emulators.</li>
+        <li>Designed NetLLMBench, a reproducible benchmarking framework using Python and LangChain to evaluate LLM agents on network configuration tasks.</li>
+        <li>Built and operated a Kubernetes experimental cluster and developed a custom pod autoscaler (HyPA) to optimize resource provisioning.</li>
+        <li>Ranked 3rd in the GNNet2023 Challenge by designing Graph Neural Networks (GNNs) in PyTorch to predict latency on real-world datasets.</li>
+        <li>Conducted hardware testbed measurements of TCP/IP and QUIC to analyze congestion dynamics in high-throughput applications.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Chair of Communication Networks, Technical University of Munich</div>
+        <div class="cv-entry-date">2020 – 2022</div>
+      </div>
+      <div class="cv-entry-meta">Working Student, Munich, Germany</div>
+      <ul>
+        <li>Characterized traffic patterns of distributed training workloads (PyTorch DDP, MPI) to evaluate synchronization performance across RoCE and standard Ethernet.</li>
+        <li>Modeled TCP congestion behavior in reconfigurable data centers to predict flow completion times and quantify topology switching impact.</li>
+      </ul>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">IBM</div>
+        <div class="cv-entry-date">2018 – 2019</div>
+      </div>
+      <div class="cv-entry-meta">IT Specialist, Istanbul, Türkiye</div>
+      <ul>
+        <li>Implemented automation workflows using Bash scripting and configured enterprise monitoring dashboards for operational insights.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <h2>Education</h2>
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Technical University of Munich (TUM)</div>
+        <div class="cv-entry-date">2022 – Now</div>
+      </div>
+      <div class="cv-entry-meta">Ph.D. Computer Engineering (Advisor: Prof. Dr.-Ing. Wolfgang Kellerer)</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Technical University of Munich (TUM)</div>
+        <div class="cv-entry-date">2019 – 2022</div>
+      </div>
+      <div class="cv-entry-meta">M.Sc. Communications Engineering</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Koc University</div>
+        <div class="cv-entry-date">2014 – 2019</div>
+      </div>
+      <div class="cv-entry-meta">B.Sc. Electrical &amp; Electronics Engineering | B.A. Economics</div>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <h2>Technical Skills</h2>
+    <div class="cv-skill-grid">
+      <div class="cv-skill">
+        <span class="cv-skill-label">AI &amp; ML</span>
+        <span class="cv-skill-text">Python, PyTorch, Distributed Fine-Tuning, Hugging Face (Accelerate, PEFT/LoRA), vLLM </span>
+      </div>
+      <div class="cv-skill">
+        <span class="cv-skill-label">Networking</span>
+        <span class="cv-skill-text">C++, RDMA (InfiniBand/RoCE), P4, eBPF, ns-3, Mininet, TCP/IP</span>
+      </div>
+      <div class="cv-skill">
+        <span class="cv-skill-label">Infrastructure</span>
+        <span class="cv-skill-text">Docker, Kubernetes, Helm, Linux, Bash, Git, GitLab CI</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <h2>Selected Publications</h2>
+    <div class="cv-pubs">
+      <div class="cv-pub">
+        <div class="cv-pub-title">Agent-based Enhancement of Small Language Models: A Lightweight Solution for Network Management</div>
+        <div class="cv-pub-meta"><span class="me">K. Aykurt</span>, C. Dang, A. Blenk, W. Kellerer. Manuscript under review.</div>
+      </div>
+      <div class="cv-pub">
+        <div class="cv-pub-title">
+          <a href="https://mediatum.ub.tum.de/doc/1759791/document.pdf" target="_blank" rel="noopener">
+            NetLLMBench: A Benchmark Framework for Large Language Models in Network Configuration Tasks
+          </a>
+        </div>
+        <div class="cv-pub-meta"><span class="me">K. Aykurt</span>, A. Blenk, W. Kellerer. NFV-SDN 2024.</div>
+      </div>
+      <div class="cv-pub">
+        <div class="cv-pub-title">
+          <a href="https://mediatum.ub.tum.de/doc/1725261/document.pdf" target="_blank" rel="noopener">
+            When TCP Meets Reconfigurations: A Comprehensive Measurement Study
+          </a>
+        </div>
+        <div class="cv-pub-meta"><span class="me">K. Aykurt</span>, J. Zerwas, A. Blenk, W. Kellerer. IEEE TNSM 2023.</div>
+      </div>
+      <div class="cv-pub">
+        <div class="cv-pub-title">
+          <a href="https://mediatum.ub.tum.de/doc/1619741/document.pdf" target="_blank" rel="noopener">
+            Network Traffic Characteristics of Machine Learning Frameworks Under the Microscope
+          </a>
+        </div>
+        <div class="cv-pub-meta">J. Zerwas, <span class="me">K. Aykurt</span>, S. Schmid, A. Blenk. CNSM 2021.</div>
+      </div>
+    </div>
+  </div>
+</section>
+```
