@@ -1,0 +1,16 @@
+[project]
+name = "website"
+version = "0.1.0"
+
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Core scientific & data stack
+    "numpy>=2.4",
+    "pandas>=2.3",
+    "matplotlib>=3.10",
+    "seaborn>=0.13",
+    "pyyaml>=6.0",
+
+    # Notebooks
+    "jupyterlab>=4.5",
+]

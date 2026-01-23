@@ -1,0 +1,404 @@
+/* =========================
+   Publication list
+   ========================= */
+
+.pub-list {
+    margin-top: 1.5rem;
+}
+
+/* =========================
+   Year groups
+   ========================= */
+
+.pub-year-group {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2rem;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    column-gap: 18px;
+    align-items: start;
+}
+
+.pub-year-toggle {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 10px 14px;
+    background: #f7f9fc;
+    color: #111827;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.pub-year-toggle:hover {
+    background: #eef3fb;
+}
+
+.pub-year-content {
+    margin-top: 0;
+}
+
+.pub-year-content .pub-card {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+@media (max-width: 720px) {
+    .pub-year-group {
+        grid-template-columns: 1fr;
+        row-gap: 0.75rem;
+    }
+
+    .quarto-title-block {
+        padding-left: 0;
+    }
+}
+
+/* =========================
+   Page title alignment
+   ========================= */
+
+.quarto-title-block {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 128px;
+}
+
+.quarto-title-block .title,
+.quarto-title-block .subtitle,
+.quarto-title-block .description {
+    text-align: left;
+}
+
+/* =========================
+   Publication card
+   ========================= */
+
+.pub-card {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-left: 4px solid #0065bd;
+    /* accent */
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+    background: #ffffff;
+}
+
+/* =========================
+   Title
+   ========================= */
+
+.pub-title a {
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: black;
+}
+
+.pub-title a:hover {
+    color: #1f4e79;
+    /* TUM Blue */
+}
+
+body.theme-dark .pub-card {
+    background: #111827;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.theme-dark .pub-title a {
+    color: #93c5fd;
+}
+
+body.theme-dark .pub-title a:hover {
+    color: #bfdbfe;
+}
+
+body.theme-dark .pub-title a::after {
+    color: #94a3b8;
+}
+
+body.theme-dark .pub-title a:hover::after {
+    color: #93c5fd;
+}
+
+body.theme-dark .pub-year-toggle {
+    background: #111827;
+    color: #e5e7eb;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.theme-dark .pub-year-toggle:hover {
+    background: #1f2937;
+}
+
+body.theme-dark .pub-venue {
+    color: #94a3b8;
+}
+
+body.theme-dark .pub-pill {
+    color: #e5e7eb;
+    border-color: rgba(148, 163, 184, 0.35);
+    background: #0f172a;
+}
+
+body.theme-dark .pub-pill:hover {
+    color: #93c5fd;
+    border-color: #93c5fd;
+    background: rgba(147, 197, 253, 0.12);
+}
+
+body.theme-dark .pub-bibtex {
+    color: #e5e7eb;
+}
+
+body.theme-dark .pub-bibtex,
+body.theme-dark .pub-abs-text {
+    border-color: rgba(148, 163, 184, 0.45);
+}
+
+body.theme-dark .pub-bib-copy {
+    background: #0f172a;
+    color: #e5e7eb;
+    border-color: rgba(148, 163, 184, 0.45);
+}
+
+body.theme-dark .pub-bib-copy:hover {
+    color: #93c5fd;
+    border-color: #93c5fd;
+    background: rgba(147, 197, 253, 0.12);
+}
+
+.pub-title a::after {
+    content: "↗";
+    font-size: 0.85em;
+    margin-left: 0.35rem;
+    color: #6b7280;
+}
+
+.pub-title a:hover::after {
+    color: #1f4e79;
+}
+
+.pub-award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(245, 158, 11, 0.16);
+    color: #92400e;
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    vertical-align: middle;
+    line-height: 1.2;
+}
+
+.pub-award-badge i {
+    color: #f59e0b;
+    font-size: 0.8rem;
+}
+
+body.theme-dark .pub-award-badge {
+    background: rgba(245, 158, 11, 0.18);
+    color: #fde68a;
+    border-color: rgba(245, 158, 11, 0.55);
+}
+
+body.theme-dark .pub-award-badge i {
+    color: #fbbf24;
+}
+
+/* =========================
+   Authors
+   ========================= */
+
+.pub-authors {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.pub-authors .me {
+    font-weight: 700;
+}
+
+/* =========================
+   Venue / year
+   ========================= */
+
+.pub-venue {
+    font-family: "Fira Mono", monospace;
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   Links row (pills)
+   ========================= */
+
+.pub-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pub-link-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.pub-link-panels {
+    width: 100%;
+}
+
+/* Base pill style */
+.pub-pill {
+    font-family: "Fira Mono", monospace;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 999px;
+    text-decoration: none;
+    color: black;
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.pub-pill:hover {
+    color: #1f4e79;
+    border-color: #1f4e79;
+    background: rgba(0, 101, 189, 0.06);
+}
+
+/* Link pills */
+.pub-pill.pub-link {
+    font-weight: 400;
+}
+
+.pub-pill.pub-link i {
+    font-size: 0.95em;
+}
+
+/* =========================
+   Toggle buttons
+   ========================= */
+
+.pub-toggle {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: white;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* arrow indicator */
+.pub-bib-arrow {
+    font-size: 0.9em;
+    transition: transform 120ms ease;
+}
+
+.pub-toggle.is-open .pub-bib-arrow {
+    transform: rotate(180deg);
+}
+
+/* BibTeX content box */
+.pub-bibtex {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.03);
+    font-family: "Fira Mono", monospace;
+    font-size: 0.85rem;
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    tab-size: 2;
+    box-sizing: border-box;
+}
+
+.pub-bibtex-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.pub-abs-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.pub-abs-text {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.03);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+.pub-bib-copy {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    background: white;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-family: "Fira Mono", monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.pub-bib-copy:hover {
+    color: #0065bd;
+    border-color: #0065bd;
+    background: rgba(0, 101, 189, 0.06);
+}
+
+.pub-bib-copy.is-copied {
+    color: #0b6f3a;
+    border-color: #0b6f3a;
+    background: rgba(11, 111, 58, 0.1);
+}

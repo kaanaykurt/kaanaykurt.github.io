@@ -1,0 +1,91 @@
+---
+title: ""
+page-layout: full
+format:
+  html:
+    css: home.css
+---
+
+```{=html}
+<section class="home-hero">
+  <div class="home-card">
+    <div class="home-main">
+      <div class="home-intro">
+        <div class="home-name">Kaan Aykurt</div>
+        <div class="home-role">PhD Candidate · AI-driven Networked Systems</div>
+      </div>
+      <div class="home-section">
+        <h2>About</h2>
+        <p style="text-align: justify;">
+          I am Kaan, a fourth-year PhD student at the <a href="https://www.ce.cit.tum.de/en/lkn/home/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Chair of Communication Networks</a> led by <a href="https://www.ce.cit.tum.de/en/lkn/team/staff/kellerer-wolfgang/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Prof. Wolfgang Kellerer</a>. My research spans <strong>AI for Networking</strong> and <strong>Networking for AI</strong>. I work on reproducible evaluation frameworks for LLMs in networking and study communication as a bottleneck in large-scale AI/ML systems.
+        </p>
+      </div>
+
+      <div class="home-section home-grid">
+        <div class="home-block home-block-ai">
+          <h3><i class="bi bi-robot home-header-icon" aria-hidden="true"></i>AI for Networking</h3>
+          <ul>
+            <li>Agentic LLM workflows for autonomous networks.</li>
+            <li>Benchmarking frameworks and reproducible evaluation.</li>
+          </ul>
+        </div>
+        <div class="home-block home-block-networking">
+          <h3><i class="bi bi-hdd-network home-header-icon" aria-hidden="true"></i>Networking for AI</h3>
+          <ul>
+            <li>Communication bottlenecks in large-scale AI/ML training.</li>
+            <li>Evaluation of RDMA (RoCE, Infiniband) and standard Ethernet transports.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="home-section">
+        <h2>Selected Highlights</h2>
+        <div class="home-highlights">
+          <div class="home-highlight">
+            <div class="home-highlight-title">
+              <a class="home-highlight-link" href="https://github.com/kaanaykurt/netllmbench">
+                NetLLMBench <span class="external-link-icon" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="home-highlight-text">Benchmark framework for LLMs in network configuration tasks.</div>
+          </div>
+          <div class="home-highlight">
+            <div class="home-highlight-title">
+              <a class="home-highlight-link" href="https://github.com/kaanaykurt/dml-network-traffic-analysis">
+                DML Network Traffic Analysis <span class="external-link-icon" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="home-highlight-text">Evaluation of distributed machine learning frameworks' network characteristics.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="home-side">
+      <img class="home-avatar" src="files/profile.jpeg" alt="Portrait of Kaan Aykurt">
+      <div class="home-location">
+        <i class="bi bi-bank" aria-hidden="true"></i>
+        <span>TU Munich</span>
+      </div>
+      <div class="home-location">
+        <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+        <span>Munich, Germany</span>
+      </div>
+      <div class="home-icon-links">
+        <a href="mailto:kaanaykurt@gmail.com" aria-label="Email">
+          <i class="bi bi-envelope"></i>
+        </a>
+        <a href="https://github.com/kaanaykurt" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kaanaykurt/" aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=7o2xaGsAAAAJ" aria-label="Google Scholar">
+          <i class="bi bi-mortarboard-fill"></i>
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+```

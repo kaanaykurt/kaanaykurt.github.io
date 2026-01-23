@@ -1,0 +1,120 @@
+/* css styles */
+
+/* Navbar tweaks only (font + colors already defined in theme.scss) */
+.navbar {
+    background-color: white;
+}
+
+/* Ensure navbar links stay black and use orange hover */
+.navbar a,
+.navbar .navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar a:hover,
+.navbar .navbar-nav .nav-link:hover {
+    color: #ff6700;
+}
+
+body.theme-dark {
+    background-color: #0b1220;
+    color: #e5e7eb;
+}
+
+body.theme-dark .navbar {
+    background-color: #0b1220;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+body.theme-dark .navbar a,
+body.theme-dark .navbar .navbar-nav .nav-link {
+    color: #e5e7eb;
+}
+
+body.theme-dark .navbar a:hover,
+body.theme-dark .navbar .navbar-nav .nav-link:hover {
+    color: #ffb169;
+}
+
+body.theme-dark .navbar-brand {
+    color: #e5e7eb;
+}
+
+body.theme-dark .navbar-brand:hover {
+    color: #ffb169;
+}
+
+body.theme-dark .quarto-title-block .title,
+body.theme-dark .quarto-title-block .subtitle,
+body.theme-dark .quarto-title-block .description,
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark h5,
+body.theme-dark h6 {
+    color: #e5e7eb;
+}
+
+body.theme-dark a {
+    color: #93c5fd;
+}
+
+body.theme-dark a:hover {
+    color: #bfdbfe;
+}
+
+body.theme-dark .quarto-listing-category {
+    color: #cbd5f5;
+}
+
+body.theme-dark .content,
+body.theme-dark .page-columns,
+body.theme-dark .page-layout,
+body.theme-dark .page-body {
+    color: #e5e7eb;
+}
+
+body.theme-dark .quarto-listing .listing-item {
+    background: #111827;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.theme-dark .quarto-listing .listing-item .listing-title a {
+    color: #e5e7eb;
+}
+
+body.theme-dark .quarto-listing .listing-item .listing-title a:hover {
+    color: #93c5fd;
+}
+
+body.theme-dark .quarto-listing a {
+    color: #e5e7eb;
+}
+
+body.theme-dark .quarto-listing a:hover {
+    color: #93c5fd;
+}
+
+body.theme-dark .quarto-listing .listing-item .listing-description,
+body.theme-dark .quarto-listing .listing-item .listing-date,
+body.theme-dark .quarto-listing .listing-item .listing-reading-time,
+body.theme-dark .quarto-listing .listing-item .listing-author {
+    color: #cbd5f5;
+}
+
+/* Explicitly keep brand monospace (theme already does this, but harmless) */
+.navbar-brand {
+    font-family: "Fira Mono", monospace;
+    font-weight: 700;
+}
+
+/* Listing categories as monospace accent */
+.quarto-listing-category {
+    font-family: "Fira Mono", monospace;
+}
+
+/* Match Quarto page titles to h2 sizing globally */
+.quarto-title-block .title {
+    font-size: 1.8rem;
+}

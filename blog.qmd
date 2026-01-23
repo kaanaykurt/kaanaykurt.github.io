@@ -1,0 +1,11 @@
+---
+title: "Blog"
+page-layout: full
+listing:
+  contents: "blogs/**/blog.qmd"
+  type: default
+  sort: "date desc"
+  page-size: 10
+  grid-columns: 1
+  fields: [title, date, description, categories, reading-time]
+---

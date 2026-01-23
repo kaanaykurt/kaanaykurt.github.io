@@ -1,0 +1,6 @@
+################ MacOS specific files ##################
+.idea/
+.DS_Store
+
+/.quarto/
+**/*.quarto_ipynb

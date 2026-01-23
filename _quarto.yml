@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "About Me"
+  search: false
+  navbar:
+    right:
+      - text: Home
+        href: index.qmd
+      - text: CV
+        href: cv.qmd
+      - text: Publications
+        href: publications.qmd
+      - text: Teaching
+        href: teaching.qmd
+      - text: Blog
+        href: blog.qmd
+      - icon: moon
+        href: "javascript:void(0)"
+  page-footer:
+    center: "© 2026 Kaan Aykurt. Licensed under [CC BY 4.0.](https://creativecommons.org/licenses/by/4.0/)"
+
+format:
+  html:
+    toc: true
+    mainfont: "Lato"
+    monofont: "Fira Mono"
+    theme: theme.scss
+    css: styles.css
+    include-after-body: theme-toggle.html

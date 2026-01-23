@@ -1,0 +1,563 @@
+---
+title: "Publications"
+page-layout: full
+format:
+  html:
+    css: publications.css
+---
+
+```{=html}
+<div class="pub-list">
+    <div class="pub-year-group">
+        <button class="pub-year-toggle is-open" type="button" aria-expanded="true" aria-controls="pub-year-2025">
+            <span class="pub-year-label">2025</span>
+        </button>
+        <div class="pub-year-content" id="pub-year-2025">
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://dl.ifip.org/index.html/db/conf/networking/networking2025/1571141457.pdf" target="_blank" rel="noopener">
+                    Performance Evaluation of L4S in XR Scenarios
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                P. Steininger, R. Pries, Y. Deshpande, <span class="me">K. Aykurt</span>, C. Chang, K. De Schepper, W. Kellerer
+            </div>
+
+            <div class="pub-venue">
+                IFIP Networking, 2025
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://dl.ifip.org/index.html/db/conf/networking/networking2025/" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-1">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-1">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-1" hidden>
+                        <div class="pub-abs-text">
+                            <p>Low Latency, Low Loss, Scalable Throughput (L4S) is a network protocol designed to provide ultra-low queuing delays, minimal packet loss, and scalable throughput, which are key factors for real-time applications such as streaming, online gaming, and Extended Reality (XR). With the rise of advanced XR applications and the increasing adoption of various XR headsets, remote rendering has become a common practice due to the hardware limitations of these devices.</p>
+                        
+                            <p>This study evaluates the performance of L4S in multi-device XR scenarios, focusing on its impact on latency, packet loss, and throughput. Unlike traditional congestion control mechanisms, which rely on reactive loss-based methods, L4S employs Explicit Congestion Notification (ECN) to signal congestion along with fast congestion control algorithms to minimize packet loss.</p>
+                        
+                            <p>This proactive approach enables rapid adaptation to network conditions, ensuring consistently low latency and improved stability. L4S was integrated into the network infrastructure between a streaming application and an XR headset. The performance was tested under varying network conditions to assess its effectiveness. The results show that L4S significantly reduces packet loss and latency while maintaining high throughput, leading to enhanced XR streaming quality and real-time interactions. These findings demonstrate the potential of L4S to improve real-world XR applications, with implications for broader adoption in lowlatency networking.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-1" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@article{steininger2025l4s,
+  title={Performance Evaluation of L4S in XR Scenarios},
+  author={Steininger, Philipp and Pries, Rastin and Deshpande, Yash and Aykurt, Kaan and Chang, Chia-Yu and De Schepper, Koen and Kellerer, Wolfgang}
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+    
+            </div>
+        </div>
+    </div>
+
+    <div class="pub-year-group">
+        <button class="pub-year-toggle is-open" type="button" aria-expanded="true" aria-controls="pub-year-2024">
+            <span class="pub-year-label">2024</span>
+        </button>
+        <div class="pub-year-content" id="pub-year-2024">
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://mediatum.ub.tum.de/doc/1759791/document.pdf" target="_blank" rel="noopener">
+                    NetLLMBench: A Benchmark Framework for Large Language Models in Network Configuration Tasks
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                <span class="me">K. Aykurt</span>, A. Blenk, W. Kellerer
+            </div>
+
+            <div class="pub-venue">
+                IEEE NFV-SDN, 2024
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://ieeexplore.ieee.org/document/10807499" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-2">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-2">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-2" hidden>
+                        <div class="pub-abs-text">
+                            <p>Traditional network management techniques often struggle with the scale and dynamism of modern networks, requiring significant human oversight and being prone to high error rates. Large Language Models (LLMs) present a promising alternative to conventional approaches by automating network configuration and management. However, a systematic way to evaluate their performance is lacking in the literature.</p>
+                        
+                            <p>This paper introduces NetLLMBench, a novel framework designed to rigorously assess the performance of LLMs in managing computer networks. By integrating prompt engineering and network emulation in a closed loop, NetLLMBench benchmarks and validates LLMs’ responses in various configuration scenarios. The findings establish foundational benchmarks to guide future applications of LLMs in enhancing network management efficiency.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-2" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@inproceedings{aykurt2024netllmbench,
+  title={NetLLMBench: A Benchmark Framework for Large Language Models in Network Configuration Tasks},
+  author={Aykurt, Kaan and Blenk, Andreas and Kellerer, Wolfgang},
+  booktitle={2024 IEEE Conference on Network Function Virtualization and Software Defined Networks (NFV-SDN)},
+  pages={1-6},
+  year={2024},
+  doi={10.1109/NFV-SDN61811.2024.10807499}
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+    
+            </div>
+
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://www.itu.int/dms_pub/itu-s/opb/jnl/S-JNL-VOL5.ISSUE4-2024-A34-PDF-E.pdf" target="_blank" rel="noopener">
+                    Digital Twin Opportunities with Leveraging Graph Neural Networks on Real Network Data
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                <span class="me">K. Aykurt</span>, M. Stephan, S. Ayvasik, J. Zerwas, W. Kellerer
+            </div>
+
+            <div class="pub-venue">
+                ITU Journal on Future and Evolving Technologies, 2024
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://www.itu.int/pub/S-JNL-VOL5.ISSUE4-2024-A34" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-3">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-3">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-3" hidden>
+                        <div class="pub-abs-text">
+                            <p>Sixth-generation networks propose integrating multiple networks while ensuring seamless network performance. Hence, networks are becoming increasingly complex while the traditional methods to manage networks are facing significant challenges as the topology sizes, traffic patterns, and network domains are changing. Autonomous network management solutions, which are often built on digital twins, are emerging as possible candidates for addressing these challenges.</p>
+                        
+                            <p>Machine learning models are widely used for realizing digital twins. Among many neural network structures, graph neural networks are a subclass of promising machine learning methods that perform well in graph-structured data such as network topologies. In this paper, we explore GNN performance on real network data and present our solution to per-flow mean delay prediction which achieves a MAPE of 35.39%, improving the baseline solutions by over 20% together with additional findings and further improved models for Graph Neural Networking Challenge 2023.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-3" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@article{aykurt2024dtopportunities, 
+  title={Digital Twin Opportunities with Leveraging Graph Neural Networks on Real Network Data},  
+  author={Aykurt, Kaan and Stephan, Maximilian and Ayvasik, Serkut and Zerwas, Johannes and Kellerer, Wolfgang},
+  journal={ITU Journal on Future and Evolving Technologies},
+  volume={5},
+  number={4}, 
+  pages={458–464},
+  year={2024}, 
+  doi={10.52953/ZOEM2142}
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+    
+            </div>
+        </div>
+    </div>
+
+    <div class="pub-year-group">
+        <button class="pub-year-toggle is-open" type="button" aria-expanded="true" aria-controls="pub-year-2023">
+            <span class="pub-year-label">2023</span>
+        </button>
+        <div class="pub-year-content" id="pub-year-2023">
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://mediatum.ub.tum.de/doc/1725261/document.pdf" target="_blank" rel="noopener">
+                    When TCP Meets Reconfigurations: A Comprehensive Measurement Study
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                <span class="me">K. Aykurt</span>, J. Zerwas, A. Blenk, W. Kellerer
+            </div>
+
+            <div class="pub-venue">
+                IEEE TNSM, 2023
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://ieeexplore.ieee.org/abstract/document/10295992" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-4">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-4">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-4" hidden>
+                        <div class="pub-abs-text">
+                            <p>The diversity of deployed applications in data centers leads to a complex traffic mix in the network. Reconfigurable Data Center Networks (RDCNs) have been designed to fulfill the demanding requirements of ever-changing data center traffic. However, they pose new challenges for network traffic engineering, e.g., interference between reconfigurations, transport layer protocols, and congestion control (CC) algorithms. This raises a fundamental research problem: can the current transport layer protocols handle frequent network updates?</p>
+                        
+                            <p>This paper focuses on TCP and presents a measurement study of TCP performance in RDCNs. In particular, it evaluates diverse traffic mixes combining TCP variants, UDP, and QUIC transport protocols. The quantitative analysis of the measurements shows that migrated TCP flows suffer from frequent reconfigurations. The effect of reconfigurations on the cost, e.g. increased Flow Completion Time (FCT), depending on the traffic mix is modeled with Machine Learning (ML) methods. The availability of such a model will provide insights into the relationship between the reconfiguration settings and the FCT. Our model explains 88% of the variance in the FCT increase under different reconfiguration settings.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-4" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@article{aykurt2024tcpmeetsreconfigurations,
+  author={Aykurt, Kaan and Zerwas, Johannes and Blenk, Andreas and Kellerer, Wolfgang},
+  journal={IEEE Transactions on Network and Service Management}, 
+  title={When TCP Meets Reconfigurations: A Comprehensive Measurement Study}, 
+  year={2024},
+  volume={21},
+  number={2},
+  pages={1372-1386},
+  doi={10.1109/TNSM.2023.3327508}
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+    
+            </div>
+
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://mediatum.ub.tum.de/doc/1707392/document.pdf" target="_blank" rel="noopener">
+                    Autonomous Network Management in Multi-Domain 6G Networks Based on Graph Neural Networks
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                <span class="me">K. Aykurt</span>, W. Kellerer
+            </div>
+
+            <div class="pub-venue">
+                IEEE NetSoft, 2023
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://ieeexplore.ieee.org/abstract/document/10175480" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-5">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-5">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-5" hidden>
+                        <div class="pub-abs-text">
+                            <p>Sixth-generation (6G) networks propose integrating multiple networks and domains while improving network performance. Hence, today’s networks are becoming increasingly larger and more complex. Traditional methods to manage networks are facing significant challenges as the topology sizes, traffic patterns, and network domains are changing.</p>
+                        
+                            <p>This paper presents the state-of-the-art in literature for network management and proposes a research plan for an autonomous network management framework fueled by the Digital Twin (DT) paradigm. Unlike the existing methods such as Queuing Theory (QT) or network simulation studies, the proposed framework relies on state-of-the-art Graph Neural Networks (GNNs) for network performance analysis. We argue that seamless integration of networks while improving performance guarantees can be achieved via autonomous management of networks and present a research plan in this paper.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-5" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@inproceedings{aykurt2023autonomous,
+  title={Autonomous Network Management in Multi-Domain 6G Networks Based on Graph Neural Networks},
+  author={Aykurt, Kaan and Kellerer, Wolfgang},
+  booktitle={2023 IEEE 9th International Conference on Network Softwarization (NetSoft)},
+  pages={338-341},
+  year={2023},
+  doi={10.1109/NetSoft57336.2023.10175480}
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+    
+            </div>
+
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://mediatum.ub.tum.de/doc/1722633/1722633.pdf" target="_blank" rel="noopener">
+                    HyPA: Hybrid Horizontal Pod Autoscaling with Automated Model Updates
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                <span class="me">K. Aykurt</span>, R. Ursu, J. Zerwas, P. Krämer, N. Asadi, L. Wong, W. Kellerer
+            </div>
+
+            <div class="pub-venue">
+                IEEE NFV-SDN, 2023
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://ieeexplore.ieee.org/abstract/document/10329742" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-6">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-6">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-6" hidden>
+                        <div class="pub-abs-text">
+                            <p>Due to changing demand patterns driven by technological advancements and the rise of new applications and services, the provisioning of heterogeneous workloads is a crucial component of the resource allocation problem. Traditional resource allocation strategies such as reactive autoscaling or prediction-based proactive solutions, fail to meet the desired performance goals when the underlying demand arrival pattern changes.</p>
+
+                            <p>In this paper, we present HyPA, which combines reactive and proactive components to autoscale pods in a Kubernetes environment. In contrast to previous approaches of hybrid autoscaling, HyPA automatically reacts to drifts in the request arrival pattern. Specifically, it updates the model of its proactive component when the prediction performance decreases. The evaluation in a simulation on a variety of real-world traces, spanning multiple days, demonstrates that HyPA improves upon existing purely reactive and purely proactive horizontal pod autoscalers.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-6" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@inproceedings{aykurt2023hypa,
+  title={HyPA: Hybrid Horizontal Pod Autoscaling with Automated Model Updates}, 
+  author={Aykurt, Kaan and Ursu, Răzvan-Mihai and Zerwas, Johannes and Krämer, Patrick and Asadi, Navidreza and Wong, Leon and Kellerer, Wolfgang},
+  booktitle={2023 IEEE Conference on Network Function Virtualization and Software Defined Networks (NFV-SDN)},
+  year={2023},
+  pages={8-14},
+  doi={10.1109/NFV-SDN59219.2023.10329742}
+}</pre>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pub-year-group">
+        <button class="pub-year-toggle is-open" type="button" aria-expanded="true" aria-controls="pub-year-2022">
+            <span class="pub-year-label">2022</span>
+        </button>
+        <div class="pub-year-content" id="pub-year-2022">
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://dl.ifip.org/db/conf/cnsm/cnsm2022/15.pdf" target="_blank" rel="noopener">
+                    On the Performance of TCP in Reconfigurable Data Center Networks
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                <span class="me">K. Aykurt</span>, J. Zerwas, A. Blenk, W. Kellerer
+            </div>
+
+            <div class="pub-venue">
+                IEEE CNSM, 2022
+            </div>
+            <div class="pub-award-badge" aria-label="Best student paper award">
+                <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+                Best Student Paper
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://ieeexplore.ieee.org/abstract/document/9964863" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-7">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-7">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-7" hidden>
+                        <div class="pub-abs-text">
+                            <p>Today’s data centers are hosting various applications under the same roof. The diversity among deployed applications leads to a complex traffic mix in Data Center Networks (DCNs). Reconfigurable Data Center Networks (RDCNs) have been designed to fulfill the demanding requirements of ever-changing data center traffic. However, they pose new challenges for network traffic engineering, e.g., interference between reconfigurations and congestion control (CC). This raises a fundamental research problem: can the current transport layer protocols handle frequent network updates?</p>
+
+                            <p>This paper focuses on the Transmission Control Protocol (TCP) and presents a measurement study of TCP variants in RDCNs. The quantitative analysis of the measurements shows that migrated flows suffer from frequent reconfigurations. The effect of reconfigurations on the cost, e.g. increased Flow Completion Time (FCT), depending on the traffic mix is modeled with Machine Learning (ML) methods. The availability of such a model will provide insights into the relationship between the reconfiguration settings and the FCT. Our model explains 88% of the variance in the FCT increase under different reconfiguration settings.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-7" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@inproceedings{aykurt2022tcpperformance,
+  title={On the Performance of TCP in Reconfigurable Data Center Networks}, 
+  author={Aykurt, Kaan and Zerwas, Johannes and Blenk, Andreas and Kellerer, Wolfgang},
+  booktitle={2022 18th International Conference on Network and Service Management (CNSM)}, 
+  year={2022},
+  pages={127-135},
+  doi={10.23919/CNSM55787.2022.9964863}
+}</pre>
+                    </div>
+                </div>
+            </div>    
+            </div>
+        </div>
+    </div>
+
+    <div class="pub-year-group">
+        <button class="pub-year-toggle is-open" type="button" aria-expanded="true" aria-controls="pub-year-2021">
+            <span class="pub-year-label">2021</span>
+        </button>
+        <div class="pub-year-content" id="pub-year-2021">
+            <div class="pub-card">
+            <div class="pub-title">
+                <a href="https://mediatum.ub.tum.de/doc/1619741/document.pdf" target="_blank" rel="noopener">
+                    Network Traffic Characteristics of Machine Learning Frameworks Under the Microscope
+                </a>
+            </div>
+
+            <div class="pub-authors">
+                J. Zerwas, <span class="me">K. Aykurt</span>, S. Schmid, A. Blenk
+            </div>
+
+            <div class="pub-venue">
+                IEEE CNSM, 2021
+            </div>
+
+            <div class="pub-links">
+                <div class="pub-link-row">
+                    <a class="pub-pill pub-link pub-publisher" href="https://ieeexplore.ieee.org/abstract/document/9615524" target="_blank" rel="noopener">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        Publisher
+                    </a>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-abs-8">
+                        <i class="bi bi-file-text" aria-hidden="true"></i>
+                        Abstract <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                    <button class="pub-pill pub-toggle" type="button" aria-expanded="false" aria-controls="pub-bib-8">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        BibTeX <span class="pub-bib-arrow" aria-hidden="true">▾</span>
+                    </button>
+                </div>
+                <div class="pub-link-panels">
+                    <div class="pub-abs-wrap pub-panel" id="pub-abs-8" hidden>
+                        <div class="pub-abs-text">
+                            <p>High computational demands of complex deep learning models led to workload distribution across multiple machines. Many frameworks for distributed machine learning (DML) have been developed and are employed in practice for orchestrating workload distribution.</p>
+
+                            <p>In this paper, we analyze and compare network behaviors of three widely used state-of-the-art DML frameworks. The study reveals that traffic can largely vary across the frameworks. While some frameworks exhibit well predictable patterns, others are less structured. We further explore whether and how it is possible to relate the network traffic to the DML jobs’ attributes, and present a multiple linear regression model accordingly. Our results can inform the networking community about traffic characteristics and contribute toward the generation of realistic DML traffic for simulation studies.</p>
+                        </div>
+                    </div>
+                    <div class="pub-bibtex-wrap pub-panel" id="pub-bib-8" hidden>
+                        <button class="pub-bib-copy" type="button" aria-label="Copy BibTeX">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+<pre class="pub-bibtex">@inproceedings{zerwas2021dml,
+  title={Network Traffic Characteristics of Machine Learning Frameworks Under the Microscope},
+  author={Zerwas, Johannes and Aykurt, Kaan and Schmid, Stefan and Blenk, Andreas},
+  booktitle={2021 17th International Conference on Network and Service Management (CNSM)},
+  year={2021},
+  pages={207-215},
+  doi={10.23919/CNSM52442.2021.9615524}
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+    
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener("click", (event) => {
+        const yearToggle = event.target.closest(".pub-year-toggle");
+        if (yearToggle) {
+            const targetId = yearToggle.getAttribute("aria-controls");
+            const content = targetId ? document.getElementById(targetId) : null;
+            if (!content) return;
+            const isOpen = yearToggle.classList.contains("is-open");
+            yearToggle.classList.toggle("is-open", !isOpen);
+            yearToggle.setAttribute("aria-expanded", String(!isOpen));
+            content.hidden = isOpen;
+            return;
+        }
+
+        const toggle = event.target.closest(".pub-toggle");
+        if (toggle) {
+            const card = toggle.closest(".pub-card");
+            const targetId = toggle.getAttribute("aria-controls");
+            const panel = card ? card.querySelector(`#${targetId}`) : null;
+            if (!panel) return;
+            const wasOpen = toggle.classList.contains("is-open");
+            if (card) {
+                card.querySelectorAll(".pub-toggle.is-open").forEach((button) => {
+                    button.classList.remove("is-open");
+                    button.setAttribute("aria-expanded", "false");
+                });
+                card.querySelectorAll(".pub-panel.is-open").forEach((openPanel) => {
+                    openPanel.classList.remove("is-open");
+                    openPanel.hidden = true;
+                });
+            }
+            if (!wasOpen) {
+                toggle.classList.add("is-open");
+                toggle.setAttribute("aria-expanded", "true");
+                panel.classList.add("is-open");
+                panel.hidden = false;
+            }
+            return;
+        }
+
+        const button = event.target.closest(".pub-bib-copy");
+        if (!button) return;
+        const wrapper = button.closest(".pub-bibtex-wrap");
+        const pre = wrapper ? wrapper.querySelector(".pub-bibtex") : null;
+        if (!pre) return;
+        const text = pre.textContent || "";
+        navigator.clipboard.writeText(text).then(() => {
+            button.classList.add("is-copied");
+            const originalLabel = button.getAttribute("aria-label") || "Copy BibTeX";
+            button.setAttribute("aria-label", "Copied");
+            window.setTimeout(() => {
+                button.classList.remove("is-copied");
+                button.setAttribute("aria-label", originalLabel);
+            }, 1200);
+        });
+    });
+</script>
+```
