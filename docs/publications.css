@@ -104,6 +104,9 @@
     font-weight: 600;
     font-size: 1.15rem;
     color: black;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
 }
 
 .pub-title a:hover {
@@ -114,6 +117,7 @@
 body.theme-dark .pub-card {
     background: #111827;
     border-color: rgba(148, 163, 184, 0.2);
+    border-left-color: #0065bd;
 }
 
 body.theme-dark .pub-title a {
@@ -124,13 +128,6 @@ body.theme-dark .pub-title a:hover {
     color: #bfdbfe;
 }
 
-body.theme-dark .pub-title a::after {
-    color: #94a3b8;
-}
-
-body.theme-dark .pub-title a:hover::after {
-    color: #93c5fd;
-}
 
 body.theme-dark .pub-year-toggle {
     background: #111827;
@@ -179,16 +176,6 @@ body.theme-dark .pub-bib-copy:hover {
     background: rgba(147, 197, 253, 0.12);
 }
 
-.pub-title a::after {
-    content: "↗";
-    font-size: 0.85em;
-    margin-left: 0.35rem;
-    color: #6b7280;
-}
-
-.pub-title a:hover::after {
-    color: #1f4e79;
-}
 
 .pub-award-badge {
     display: inline-flex;
@@ -244,6 +231,10 @@ body.theme-dark .pub-award-badge i {
     font-size: 0.9rem;
     color: #6b7280;
     margin-bottom: 12px;
+}
+
+.pub-venue + .pub-award-badge {
+    margin-top: -6px;
 }
 
 /* =========================
