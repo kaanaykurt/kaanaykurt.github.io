@@ -161,10 +161,16 @@ body.theme-dark .teach-link:hover {
 
 .teach-pill:hover {
   color: #1f4e79;
+  background-color: #c7d9ee;
 }
 
 body.theme-dark .teach-pill:hover {
   color: #bfdbfe;
+}
+
+body.theme-dark .teach-pill {
+  color: #ffffff;
+  background-color: #1a487c;
 }
 
 .teach-section h2 {
@@ -276,13 +282,13 @@ body.theme-dark .thesis-tag {
 }
 
 body.theme-dark .tag-internship {
-  background-color: rgba(56, 189, 248, 0.35);
+  background-color: rgba(59, 130, 246, 0.25);
 }
 
 body.theme-dark .tag-master {
-  background-color: rgba(74, 222, 128, 0.35);
+  background-color: rgba(34, 197, 94, 0.25);
 }
 
 body.theme-dark .tag-bachelor {
-  background-color: rgba(251, 146, 60, 0.35);
+  background-color: rgba(245, 158, 11, 0.25);
 }

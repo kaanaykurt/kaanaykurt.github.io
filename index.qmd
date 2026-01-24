@@ -16,8 +16,8 @@ format:
       </div>
       <div class="home-section">
         <h2>About</h2>
-        <p style="text-align: justify;">
-          I am Kaan, a fourth-year PhD student at the <a href="https://www.ce.cit.tum.de/en/lkn/home/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Chair of Communication Networks</a> led by <a href="https://www.ce.cit.tum.de/en/lkn/team/staff/kellerer-wolfgang/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Prof. Wolfgang Kellerer</a>. My research spans <strong>AI for Networking</strong> and <strong>Networking for AI</strong>. I work on reproducible evaluation frameworks for LLMs in networking and study communication as a bottleneck in large-scale AI/ML systems.
+        <p style="text-align: left;">
+          I am Kaan, a fourth-year PhD student at the <a href="https://www.ce.cit.tum.de/en/lkn/home/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Chair of Communication Networks</a> led by <a href="https://www.ce.cit.tum.de/en/lkn/team/staff/kellerer-wolfgang/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Prof. Wolfgang Kellerer</a>. My research spans <strong>AI for Networking</strong> and <strong>Networking for AI</strong>. I work on reproducible evaluation frameworks for LLMs in networking and investigate communication as a bottleneck in large-scale AI/ML systems.
         </p>
       </div>
 
