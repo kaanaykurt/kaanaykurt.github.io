@@ -150,3 +150,17 @@ body.theme-dark .nav-footer a:hover {
 .quarto-title-block .title {
     font-size: 1.8rem;
 }
+
+main.content {
+    margin-bottom: 0;
+    padding-bottom: 0.6rem;
+}
+
+footer.footer {
+    margin-top: 0.6rem;
+}
+
+.nav-footer {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}

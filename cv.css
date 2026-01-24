@@ -28,7 +28,7 @@ body.theme-dark {
 
 .cv-header {
     padding-bottom: 0.2rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.9rem;
 }
 
 .cv-header-row {
@@ -98,7 +98,11 @@ body.theme-dark {
 }
 
 .cv-section {
-    margin-top: 1.1rem;
+    margin-top: 1.2rem;
+}
+
+.cv-header+.cv-section {
+    margin-top: 0.9rem;
 }
 
 .cv-section h2 {
@@ -108,7 +112,12 @@ body.theme-dark {
     color: var(--cv-accent);
     border-bottom: 1px solid rgba(31, 78, 121, 0.35);
     padding-bottom: 0.35rem;
+    margin-top: 0.2rem;
     margin-bottom: 0.75rem;
+}
+
+.cv-section:first-of-type {
+    margin-top: 0.9rem;
 }
 
 .cv-section p {
@@ -118,11 +127,6 @@ body.theme-dark {
 
 body.theme-dark .cv-section p {
     color: #e5e7eb;
-}
-
-.cv-section .cv-justify {
-    text-align: justify;
-    text-justify: inter-word;
 }
 
 .cv-skill-grid {
@@ -198,8 +202,7 @@ body.theme-dark .cv-entry {
     margin: 0;
     padding-left: 1.1rem;
     color: #1f2937;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
 }
 
 body.theme-dark .cv-entry ul {

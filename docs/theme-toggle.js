@@ -32,5 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextDark = !body.classList.contains("theme-dark");
     applyTheme(nextDark);
     localStorage.setItem("theme", nextDark ? "dark" : "light");
+
+    const collapse = document.querySelector(".navbar .navbar-collapse.show");
+    if (collapse && window.bootstrap?.Collapse) {
+      const instance =
+        window.bootstrap.Collapse.getInstance(collapse) ||
+        new window.bootstrap.Collapse(collapse, { toggle: false });
+      instance.hide();
+    }
   });
 });
