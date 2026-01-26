@@ -4,8 +4,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     UV_PROJECT_ENVIRONMENT=/usr/local
 
-ENV QUARTO_PYTHON=/usr/local/bin/python3
-
 WORKDIR /workspaces/website
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

@@ -1,6 +1,9 @@
 ---
 title: "Blog"
 page-layout: full
+format:
+  html:
+    css: blog.css
 listing:
   contents: "blogs/**/blog.qmd"
   type: default

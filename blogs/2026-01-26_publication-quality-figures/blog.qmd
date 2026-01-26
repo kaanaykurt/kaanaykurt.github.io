@@ -1,0 +1,210 @@
+---
+title: "Generating publication-quality figures"
+date: 2026-01-26
+categories: [matplotlib, latex, docker, reproducibility]
+format:
+  html:
+    toc: true
+    code-fold: show
+    code-tools: false
+jupyter: python3
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: false
+  freeze: true
+---
+
+## Goal
+
+This post walks through a simple, **reproducible workflow for generating publication-quality figures** using Matplotlib.
+
+One of the most common (and honestly most distracting) issues I run into when reading papers is poorly formatted figures: tiny fonts, stretched labels, and inconsistent styling.
+
+In my experience, the root cause usually comes down to two things:
+
+1. Figures are created with the wrong size and then resized later
+
+2. Fonts aren’t rendered properly in the first place
+
+Both issues are completely avoidable, yet they are still very common in many publications.
+In this post, I’ll show a Docker-based approach that takes care of the annoying setup details and dependencies, so you can render figures with proper LaTeX fonts and correct sizing.
+If you care about clean, professional-looking plots, this workflow will save you a lot of frustration.
+
+---
+
+## 1) Get image sizes right
+
+First, figure out how much space your figure actually gets in the paper.
+Guessing here is how you end up with tiny fonts or awkward rescaling later.
+
+### Quick diagnostic check
+
+If you want the exact column width of your LaTeX template (down to the point), temporarily drop this into your document and compile:
+
+- `The column width is: \the\columnwidth`
+
+This will print something like **252.0pt** directly into the PDF.
+
+Divide by **72.27** to convert points to inches (TeX uses **72.27 points = 1 inch**).
+
+Matplotlib’s native unit for figure size is inches, so you can directly map this value to:
+
+- `figure.figsize = (width_in, height_in)`
+
+### Practical defaults
+**Width**
+  
+  - **IEEE**: ~3.49 in (single column), ~7.14 in (double column)
+  - **ACM**: ~3.34 in (single column), ~7 in (double column)
+
+**Height**:
+
+- Choose a reasonable aspect ratio
+- The golden ratio often produces visually pleasing results in practice
+
+---
+
+## 2) Render text with LaTeX (and use the right preamble)
+
+If you’re writing your paper in LaTeX, the most consistent way to match fonts is:
+
+- `text.usetex: True`
+- `text.latex.preamble`: your venue-specific preamble
+
+Good defaults:
+
+- Modest font sizes (9–10 pt) that match the paper.
+- Legend slightly smaller.
+
+Below are two example preambles (ACM vs IEEE-style). Pick one.
+
+```{python}
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+```{python}
+# Target figure size (inches)
+fig_width = 3.34
+fig_height = fig_width * (math.sqrt(5) - 1.0) / 2.0  # golden ratio
+
+font_size = 10
+legend_font_size = 7
+
+ACM_PREAMBLE = [
+    r"\usepackage[T1]{fontenc}",
+    r"\usepackage[tt=false,type1=true]{libertine}",
+    r"\usepackage[varqu]{zi4}",
+    r"\usepackage[libertine]{newtxmath}",
+    r"\usepackage{amsmath}",
+    r"\usepackage{siunitx}",
+]
+
+IEEE_PREAMBLE = [
+    r"\usepackage[T1]{fontenc}",
+    r"\usepackage{mathptmx}",
+    r"\usepackage{amsmath}",
+    r"\usepackage{siunitx}",
+]
+
+params = {
+    "axes.labelsize": font_size,
+    "axes.titlesize": font_size,
+    "axes.linewidth": 1.0,
+    "font.size": font_size,
+    "legend.fontsize": legend_font_size,
+    "xtick.labelsize": font_size,
+    "ytick.labelsize": font_size,
+    "figure.figsize": [fig_width, fig_height],
+    "lines.linewidth": 1.0,
+
+    "pdf.fonttype": 42,
+    "ps.fonttype": 42,
+    
+    "text.usetex": True,
+
+    # Choose ONE style:
+    "text.latex.preamble": "\n".join(ACM_PREAMBLE),
+    # "text.latex.preamble": "\n".join(IEEE_PREAMBLE),
+}
+
+plt.rcParams.update(params)
+```
+
+---
+
+## 3) Example figure
+
+For publications, prefer **PDF** for LaTeX workflows.
+
+```{python}
+x = np.linspace(0, 10, 400)
+
+fig, ax = plt.subplots()
+ax.plot(x, np.sin(x), label=r"$\sin(x)$")
+ax.set_xlabel(r"$x$")
+ax.set_ylabel(r"$y$")
+ax.legend(frameon=False)
+
+# Adjust layout manually
+fig.subplots_adjust(left=0.17, bottom=0.2, right=0.98, top=0.98)
+
+# Save
+fig.savefig("fig.pdf")
+
+plt.show()
+```
+
+### Notes
+
+- Avoid `bbox_inches="tight"` for paper figures. It recalculates the bounding box to fit all elements (labels, titles, legends) tightly, often resulting in a different-sized image than expected!
+- Use `fig.subplots_adjust(...)` to control margins explicitly and keep sizing stable.
+- Jupyter displays figures via an inline backend different than `fig.savefig()`. Each backend computes text extents (titles, labels, ticks) differently. Always inspect the exported PDF, not just the notebook output.
+
+---
+
+## 4) Make it reproducible with Docker
+
+LaTeX + fonts are the usual source of “works on my machine” problems. Docker removes that.
+
+### Dockerfile
+
+Here’s a Dockerfile that installs common TeX packages and the fonts needed for the preambles above:
+
+
+```dockerfile
+FROM python:3.12-slim
+
+ENV DEBIAN_FRONTEND=noninteractive \
+  PYTHONUNBUFFERED=1 \
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  ca-certificates curl git openssh-client \
+  fontconfig \
+  fonts-linuxlibertine \
+  texlive-xetex \
+  texlive-latex-base \
+  texlive-latex-recommended \
+  texlive-latex-extra \
+  texlive-fonts-recommended \
+  texlive-fonts-extra \
+  texlive-science \
+  texlive-plain-generic \
+  latexmk \
+  libfreetype6 \
+  libpng16-16 \
+  cm-super dvipng dvisvgm ghostscript \
+  && rm -rf /var/lib/apt/lists/* \
+  && fc-cache -f -v
+```
+
+---
+
+## Summary
+
+- Pick a target physical width that matches your paper column.
+- Set `rcParams` once, including a venue-specific LaTeX preamble.
+- Export PDF image.

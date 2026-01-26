@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Blog – About Me</title>
+<title>Blog – Kaan Aykurt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -66,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-date','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -115,6 +116,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="blog.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -125,7 +127,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">About Me</span>
+    <span class="navbar-title">Kaan Aykurt</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -200,7 +202,35 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="bWF0cGxvdGxpYiUyQ2xhdGV4JTJDZG9ja2VyJTJDcmVwcm9kdWNpYmlsaXR5" data-listing-date-sort="1769385600000" data-listing-file-modified-sort="1769435412953" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="706">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./blogs/2026-01-26_publication-quality-figures/blog.html" class="no-external">Generating publication-quality figures</a>
+</h3>
+<div class="listing-categories">
 
+<div class="listing-category" onclick="window.quartoListingCategory('bWF0cGxvdGxpYg=='); return false;">matplotlib</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bGF0ZXg='); return false;">latex</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZG9ja2Vy'); return false;">docker</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmVwcm9kdWNpYmlsaXR5'); return false;">reproducibility</div>
+
+</div>
+<div class="delink listing-description"><a href="./blogs/2026-01-26_publication-quality-figures/blog.html" class="no-external">
+This post walks through a simple, <strong>reproducible workflow for generating publication-quality figures</strong> using Matplotlib.
+</a></div>
+</div>
+<div class="metadata">
+<a href="./blogs/2026-01-26_publication-quality-figures/blog.html" class="no-external">
+<div class="listing-date">
+Jan 26, 2026
+</div>
+<div class="listing-reading-time">4 min</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->

@@ -1,0 +1,8 @@
+.quarto-listing .quarto-post .listing-title a:hover,
+.quarto-listing .quarto-post .listing-title a:focus,
+.quarto-listing .quarto-post .listing-description a:hover,
+.quarto-listing .quarto-post .listing-description a:focus,
+.quarto-listing .quarto-post .metadata a:hover,
+.quarto-listing .quarto-post .metadata a:focus {
+  color: #1d4ed8;
+}
