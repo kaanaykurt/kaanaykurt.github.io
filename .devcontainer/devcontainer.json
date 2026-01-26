@@ -3,6 +3,9 @@
     "dockerComposeFile": "docker-compose.yml",
     "service": "dev",
     "workspaceFolder": "/workspaces/website",
+    "containerEnv": {
+        "QUARTO_PYTHON": "/usr/local/bin/python3"
+    },
     "customizations": {
         "vscode": {
             "extensions": [

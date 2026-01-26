@@ -8,6 +8,4 @@ services:
     volumes:
       - ../:/workspaces/website
     working_dir: /workspaces/website
-    environment:
-      QUARTO_PYTHON: /usr/local/bin/python3
     command: sleep infinity

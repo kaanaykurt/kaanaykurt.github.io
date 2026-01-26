@@ -3,7 +3,8 @@ project:
   output-dir: docs
 
 website:
-  title: "About Me"
+  title: "Kaan Aykurt"
+  favicon: favicon.svg
   search: false
   navbar:
     right:
