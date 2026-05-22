@@ -30,6 +30,7 @@ format:
         <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950767145">WS2024</a>
         <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950801734">SS2025</a>
         <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950840187">WS2025</a>
+        <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950881451">SS2026</a>
       </div>
     </div>
 
@@ -77,7 +78,7 @@ format:
       <span class="thesis-tag tag-bachelor">Bachelor's<br>Thesis</span>
       </li>
       <li>
-      <span class="thesis-title">Can Large Language Models Manage Inter-Domain Routing? A Multi-Agent and Game-Theoretic Study of BGP</span>
+      <span class="thesis-title">Can Large Language Models Manage Inter-Domain Routing? An Agent-based Study of BGP</span>
       <span class="thesis-tag tag-internship">Research<br>Internship</span>
       </li>
       <li>
