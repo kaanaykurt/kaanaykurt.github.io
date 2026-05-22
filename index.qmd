@@ -43,6 +43,14 @@ format:
         <div class="home-highlights">
           <div class="home-highlight">
             <div class="home-highlight-title">
+              <a class="home-highlight-link" href="https://github.com/kaanaykurt/routemind">
+                RouteMind <span class="external-link-icon" aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="home-highlight-text">An LLM-Based Framework for Policy-Aware Inter-Domain Routing.</div>
+          </div>
+          <div class="home-highlight">
+            <div class="home-highlight-title">
               <a class="home-highlight-link" href="https://github.com/kaanaykurt/netllmbench">
                 NetLLMBench <span class="external-link-icon" aria-hidden="true">↗</span>
               </a>
