@@ -5,7 +5,7 @@
     --cv-panel: rgba(0, 0, 0, 0.03);
 }
 
-body.theme-dark {
+html.theme-dark body {
     --cv-accent: #93c5fd;
     --cv-muted: #94a3b8;
     --cv-border: rgba(148, 163, 184, 0.22);
@@ -125,7 +125,7 @@ body.theme-dark {
     line-height: 1.55;
 }
 
-body.theme-dark .cv-section p {
+html.theme-dark body .cv-section p {
     color: #e5e7eb;
 }
 
@@ -155,15 +155,15 @@ body.theme-dark .cv-section p {
     line-height: 1.45;
 }
 
-body.theme-dark .cv-skill {
+html.theme-dark body .cv-skill {
     background: #0f172a;
 }
 
-body.theme-dark .cv-skill-label {
+html.theme-dark body .cv-skill-label {
     color: #e5e7eb;
 }
 
-body.theme-dark .cv-skill-text {
+html.theme-dark body .cv-skill-text {
     color: #cbd5f5;
 }
 
@@ -175,7 +175,7 @@ body.theme-dark .cv-skill-text {
     margin-bottom: 0.85rem;
 }
 
-body.theme-dark .cv-entry {
+html.theme-dark body .cv-entry {
     background: #0f172a;
 }
 
@@ -205,7 +205,7 @@ body.theme-dark .cv-entry {
     text-align: left;
 }
 
-body.theme-dark .cv-entry ul {
+html.theme-dark body .cv-entry ul {
     color: #e5e7eb;
 }
 
@@ -252,28 +252,28 @@ body.theme-dark .cv-entry ul {
     color: #111827;
 }
 
-body.theme-dark .cv-pub {
+html.theme-dark body .cv-pub {
     background: #0f172a;
 }
 
-body.theme-dark .cv-pub-title {
+html.theme-dark body .cv-pub-title {
     color: #93c5fd;
 }
 
-body.theme-dark .cv-pub-title a {
+html.theme-dark body .cv-pub-title a {
     color: #93c5fd;
 }
 
-body.theme-dark .cv-pub-title a:hover {
+html.theme-dark body .cv-pub-title a:hover {
     color: #bfdbfe;
 }
 
 
-body.theme-dark .cv-pub-meta {
+html.theme-dark body .cv-pub-meta {
     color: #cbd5f5;
 }
 
-body.theme-dark .cv-pub-meta .me {
+html.theme-dark body .cv-pub-meta .me {
     color: #e5e7eb;
 }
 

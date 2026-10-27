@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-01-26">
+<meta name="description" content="A reproducible Matplotlib + LaTeX + Docker workflow for figures that come out at the right size, with the right fonts, every time.">
 
 <title>Generating publication-quality figures – Kaan Aykurt</title>
 <style>
@@ -73,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-fb799e8a5ea96ce30a98d4b4458a7cca.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b4ae9a116ab5a1c8fc17ce76ff7d434e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -89,9 +90,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
+  // Runs before first paint so pages stored as dark never flash light.
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var dark = stored
+        ? stored === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.classList.add("theme-dark");
+    } catch (e) {}
+  })();
+</script>
 
 
+<link rel="stylesheet" href="../../fonts.css">
 <link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Generating publication-quality figures – Kaan Aykurt">
+<meta property="og:description" content="A reproducible Matplotlib + LaTeX + Docker workflow for figures that come out at the right size, with the right fonts, every time.">
+<meta property="og:image" content="https://kaanaykurt.me/blogs/2026-01-26_publication-quality-figures/blog_files/figure-html/cell-4-output-1.png">
+<meta property="og:site_name" content="Kaan Aykurt">
+<meta property="og:image:height" content="425">
+<meta property="og:image:width" content="659">
+<meta name="twitter:title" content="Generating publication-quality figures – Kaan Aykurt">
+<meta name="twitter:description" content="A reproducible Matplotlib + LaTeX + Docker workflow for figures that come out at the right size, with the right fonts, every time.">
+<meta name="twitter:image" content="https://kaanaykurt.me/blogs/2026-01-26_publication-quality-figures/blog_files/figure-html/cell-4-output-1.png">
+<meta name="twitter:image-height" content="425">
+<meta name="twitter:image-width" content="659">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -131,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="javascript:void(0)"> <i class="bi bi-moon" role="img">
+    <a class="nav-link" href="../../#theme-toggle"> <i class="bi bi-moon" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -184,6 +210,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   </div>
 
+<div>
+  <div class="description">
+    A reproducible Matplotlib + LaTeX + Docker workflow for figures that come out at the right size, with the right fonts, every time.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -260,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Legend slightly smaller.</li>
 </ul>
 <p>Below are two example preambles (ACM vs IEEE-style). Pick one.</p>
-<div id="916ae687" class="cell" data-execution_count="1">
+<div id="b00ce7d2" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -268,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="186eb37b" class="cell" data-execution_count="2">
+<div id="e504710e" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Target figure size (inches)</span></span>
@@ -323,7 +354,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-figure" class="level2">
 <h2 class="anchored" data-anchor-id="example-figure">3) Example figure</h2>
 <p>For publications, prefer <strong>PDF</strong> for LaTeX workflows.</p>
-<div id="f950fc07" class="cell" data-execution_count="3">
+<div id="4363dbcd" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
@@ -369,7 +400,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode dockerfile code-with-copy"><code class="sourceCode dockerfile"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> python:3.12-slim</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ENV</span> DEBIAN_FRONTEND=noninteractive <span class="op">\</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  PYTHONUNBUFFERED=1 <span class="op">\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  PYTHONUNBUFFERED=1</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">RUN</span> <span class="ex">apt-get</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt-get</span> install <span class="at">-y</span> <span class="at">--no-install-recommends</span> <span class="dt">\</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  ca-certificates curl git openssh-client <span class="dt">\</span></span>
@@ -478,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/kaanaykurt\.me");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

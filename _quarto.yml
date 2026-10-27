@@ -1,10 +1,23 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "blogs/**/*.qmd"
+  resources:
+    - fonts/
+
+execute:
+  freeze: auto
 
 website:
   title: "Kaan Aykurt"
+  description: "Kaan Aykurt, PhD candidate at the Chair of Communication Networks, TU Munich. Research on AI for networking and networking for AI: LLM agents for network management, benchmarking, and communication in large-scale ML systems."
+  site-url: https://kaanaykurt.me
   favicon: favicon.svg
+  image: files/profile.jpeg
+  open-graph: true
+  twitter-card: true
   search: false
   navbar:
     right:
@@ -19,7 +32,7 @@ website:
       - text: Blog
         href: blog.qmd
       - icon: moon
-        href: "javascript:void(0)"
+        href: "#theme-toggle"
   page-footer:
     center: "© 2026 Kaan Aykurt. Licensed under [CC BY 4.0.](https://creativecommons.org/licenses/by/4.0/)"
 
@@ -29,5 +42,8 @@ format:
     mainfont: "Lato"
     monofont: "Fira Mono"
     theme: theme.scss
-    css: styles.css
+    css:
+      - fonts.css
+      - styles.css
+    include-in-header: theme-init.html
     include-after-body: theme-toggle.html

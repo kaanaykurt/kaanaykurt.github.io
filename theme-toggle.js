@@ -7,21 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const body = document.body;
+  // The class lives on <html>; theme-init.html sets it before first paint.
+  const root = document.documentElement;
   const icon = toggleLink.querySelector("i");
 
   const applyTheme = (isDark) => {
-    body.classList.toggle("theme-dark", isDark);
+    root.classList.toggle("theme-dark", isDark);
     if (icon) {
       icon.classList.toggle("bi-moon", !isDark);
       icon.classList.toggle("bi-sun", isDark);
     }
   };
 
-  const stored = localStorage.getItem("theme");
-  if (stored) {
-    applyTheme(stored === "dark");
-  }
+  applyTheme(root.classList.contains("theme-dark"));
 
   toggleLink.setAttribute("role", "button");
   toggleLink.setAttribute("aria-label", "Toggle dark mode");
@@ -29,9 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleLink.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
-    const nextDark = !body.classList.contains("theme-dark");
+    const nextDark = !root.classList.contains("theme-dark");
     applyTheme(nextDark);
-    localStorage.setItem("theme", nextDark ? "dark" : "light");
+    try {
+      localStorage.setItem("theme", nextDark ? "dark" : "light");
+    } catch (e) {}
 
     const collapse = document.querySelector(".navbar .navbar-collapse.show");
     if (collapse && window.bootstrap?.Collapse) {

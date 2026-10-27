@@ -1,0 +1,12 @@
+<script>
+  // Runs before first paint so pages stored as dark never flash light.
+  (function () {
+    try {
+      var stored = localStorage.getItem("theme");
+      var dark = stored
+        ? stored === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.classList.add("theme-dark");
+    } catch (e) {}
+  })();
+</script>

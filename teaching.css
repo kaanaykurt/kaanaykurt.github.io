@@ -8,7 +8,7 @@
   --teach-pill: #e3eefb;
 }
 
-body.theme-dark {
+html.theme-dark body {
   --teach-bg: #0f172a;
   --teach-ink: #e5e7eb;
   --teach-muted: #94a3b8;
@@ -55,7 +55,7 @@ body.theme-dark {
   margin-bottom: 2rem;
 }
 
-body.theme-dark .teach-hero {
+html.theme-dark body .teach-hero {
   background: linear-gradient(135deg, #0f172a, #111827);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
@@ -87,7 +87,7 @@ body.theme-dark .teach-hero {
   box-shadow: 0 10px 22px rgba(22, 35, 54, 0.06);
 }
 
-body.theme-dark .teach-card {
+html.theme-dark body .teach-card {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
 }
 
@@ -125,11 +125,11 @@ body.theme-dark .teach-card {
   color: #0065bd;
 }
 
-body.theme-dark .teach-link {
+html.theme-dark body .teach-link {
   color: #e5e7eb;
 }
 
-body.theme-dark .teach-link:hover {
+html.theme-dark body .teach-link:hover {
   color: #93c5fd;
 }
 
@@ -164,11 +164,11 @@ body.theme-dark .teach-link:hover {
   background-color: #c7d9ee;
 }
 
-body.theme-dark .teach-pill:hover {
+html.theme-dark body .teach-pill:hover {
   color: #bfdbfe;
 }
 
-body.theme-dark .teach-pill {
+html.theme-dark body .teach-pill {
   color: #ffffff;
   background-color: #1a487c;
 }
@@ -261,34 +261,34 @@ body.theme-dark .teach-pill {
   color: #ef6c00;
 }
 
-body.theme-dark .teach-thesis-list {
+html.theme-dark body .teach-thesis-list {
   color: #ffffff;
 }
 
-body.theme-dark .teach-thesis-list li {
+html.theme-dark body .teach-thesis-list li {
   border-bottom: 1px solid rgba(148, 163, 184, 0.25);
 }
 
-body.theme-dark .teach-thesis-list li:hover {
+html.theme-dark body .teach-thesis-list li:hover {
   background-color: rgba(148, 163, 184, 0.12);
 }
 
-body.theme-dark .thesis-title {
+html.theme-dark body .thesis-title {
   color: #ffffff;
 }
 
-body.theme-dark .thesis-tag {
+html.theme-dark body .thesis-tag {
   color: #ffffff;
 }
 
-body.theme-dark .tag-internship {
+html.theme-dark body .tag-internship {
   background-color: rgba(59, 130, 246, 0.25);
 }
 
-body.theme-dark .tag-master {
+html.theme-dark body .tag-master {
   background-color: rgba(34, 197, 94, 0.25);
 }
 
-body.theme-dark .tag-bachelor {
+html.theme-dark body .tag-bachelor {
   background-color: rgba(245, 158, 11, 0.25);
 }

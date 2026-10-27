@@ -7,7 +7,7 @@
     --home-shadow: 0 30px 70px rgba(17, 24, 39, 0.12);
 }
 
-body.theme-dark {
+html.theme-dark body {
     --home-ink: #e5e7eb;
     --home-muted: #94a3b8;
     --home-accent: #93c5fd;
@@ -146,17 +146,17 @@ body.theme-dark {
     box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
 }
 
-body.theme-dark .home-block {
+html.theme-dark body .home-block {
     background: #111827;
     border-color: rgba(148, 163, 184, 0.2);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
-body.theme-dark .home-block-ai {
+html.theme-dark body .home-block-ai {
     border-top-color: #22c55e;
 }
 
-body.theme-dark .home-block-networking {
+html.theme-dark body .home-block-networking {
     border-top-color: #93c5fd;
 }
 

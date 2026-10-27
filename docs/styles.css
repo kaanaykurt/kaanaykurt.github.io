@@ -25,113 +25,113 @@ body.quarto-light .navbar .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-body.theme-dark .navbar .navbar-toggler {
+html.theme-dark body .navbar .navbar-toggler {
     border: none;
 }
 
-body.theme-dark .navbar .navbar-toggler-icon {
+html.theme-dark body .navbar .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-body.theme-dark {
+html.theme-dark body {
     background-color: #0b1220;
     color: #e5e7eb;
 }
 
-body.theme-dark .navbar {
+html.theme-dark body .navbar {
     background-color: #0b1220;
     border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
 
-body.theme-dark .navbar a,
-body.theme-dark .navbar .navbar-nav .nav-link {
+html.theme-dark body .navbar a,
+html.theme-dark body .navbar .navbar-nav .nav-link {
     color: #e5e7eb;
 }
 
-body.theme-dark .navbar a:hover,
-body.theme-dark .navbar .navbar-nav .nav-link:hover {
+html.theme-dark body .navbar a:hover,
+html.theme-dark body .navbar .navbar-nav .nav-link:hover {
     color: #ffb169;
 }
 
-body.theme-dark .navbar-brand {
+html.theme-dark body .navbar-brand {
     color: #e5e7eb;
 }
 
-body.theme-dark .navbar-brand:hover {
+html.theme-dark body .navbar-brand:hover {
     color: #ffb169;
 }
 
-body.theme-dark .quarto-title-block .title,
-body.theme-dark .quarto-title-block .subtitle,
-body.theme-dark .quarto-title-block .description,
-body.theme-dark h1,
-body.theme-dark h2,
-body.theme-dark h3,
-body.theme-dark h4,
-body.theme-dark h5,
-body.theme-dark h6 {
+html.theme-dark body .quarto-title-block .title,
+html.theme-dark body .quarto-title-block .subtitle,
+html.theme-dark body .quarto-title-block .description,
+html.theme-dark body h1,
+html.theme-dark body h2,
+html.theme-dark body h3,
+html.theme-dark body h4,
+html.theme-dark body h5,
+html.theme-dark body h6 {
     color: #e5e7eb;
 }
 
-body.theme-dark a {
+html.theme-dark body a {
     color: #93c5fd;
 }
 
-body.theme-dark a:hover {
+html.theme-dark body a:hover {
     color: #bfdbfe;
 }
 
-body.theme-dark .quarto-listing-category {
+html.theme-dark body .quarto-listing-category {
     color: #cbd5f5;
 }
 
-body.theme-dark .content,
-body.theme-dark .page-columns,
-body.theme-dark .page-layout,
-body.theme-dark .page-body {
+html.theme-dark body .content,
+html.theme-dark body .page-columns,
+html.theme-dark body .page-layout,
+html.theme-dark body .page-body {
     color: #e5e7eb;
 }
 
-body.theme-dark .quarto-listing .listing-item {
+html.theme-dark body .quarto-listing .listing-item {
     background: #111827;
     border-color: rgba(148, 163, 184, 0.2);
 }
 
-body.theme-dark .quarto-listing .listing-item .listing-title a {
+html.theme-dark body .quarto-listing .listing-item .listing-title a {
     color: #e5e7eb;
 }
 
-body.theme-dark .quarto-listing .listing-item .listing-title a:hover {
+html.theme-dark body .quarto-listing .listing-item .listing-title a:hover {
     color: #93c5fd;
 }
 
-body.theme-dark .quarto-listing a {
+html.theme-dark body .quarto-listing a {
     color: #e5e7eb;
 }
 
-body.theme-dark .quarto-listing a:hover {
+html.theme-dark body .quarto-listing a:hover {
     color: #93c5fd;
 }
 
-body.theme-dark .quarto-listing .listing-item .listing-description,
-body.theme-dark .quarto-listing .listing-item .listing-date,
-body.theme-dark .quarto-listing .listing-item .listing-reading-time,
-body.theme-dark .quarto-listing .listing-item .listing-author {
+html.theme-dark body .quarto-listing .listing-item .listing-description,
+html.theme-dark body .quarto-listing .listing-item .listing-date,
+html.theme-dark body .quarto-listing .listing-item .listing-reading-time,
+html.theme-dark body .quarto-listing .listing-item .listing-author {
     color: #cbd5f5;
 }
 
-body.theme-dark .footer,
-body.theme-dark .nav-footer {
+html.theme-dark body .footer,
+html.theme-dark body .nav-footer {
     background-color: #0b1220;
     color: #e5e7eb;
     border-top: 1px solid rgba(148, 163, 184, 0.2);
 }
 
-body.theme-dark .nav-footer a {
+html.theme-dark body .nav-footer a {
     color: #93c5fd;
 }
 
-body.theme-dark .nav-footer a:hover {
+html.theme-dark body .nav-footer a:hover {
     color: #bfdbfe;
 }
 

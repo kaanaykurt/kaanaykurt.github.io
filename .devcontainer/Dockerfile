@@ -27,9 +27,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install Quarto
 ARG QUARTO_VERSION=1.8.27
-ARG ARCH=arm64 
+ARG TARGETARCH
 
-RUN curl -fsSL https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${ARCH}.deb \
+RUN curl -fsSL https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${TARGETARCH}.deb \
     -o /tmp/quarto.deb \
     && dpkg -i /tmp/quarto.deb \
     && rm /tmp/quarto.deb
@@ -37,5 +37,5 @@ RUN curl -fsSL https://github.com/quarto-dev/quarto-cli/releases/download/v${QUA
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:${PATH}"
 
-COPY pyproject.toml ./
-RUN uv sync
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen

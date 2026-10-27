@@ -1,0 +1,4 @@
+# Build output and caches: hidden in GitHub diffs and language statistics.
+docs/**      linguist-generated=true
+_freeze/**   linguist-generated=true
+uv.lock      linguist-generated=true

@@ -1,6 +1,7 @@
 ---
 title: "Generating publication-quality figures"
 date: 2026-01-26
+description: "A reproducible Matplotlib + LaTeX + Docker workflow for figures that come out at the right size, with the right fonts, every time."
 categories: [matplotlib, latex, docker, reproducibility]
 format:
   html:
@@ -13,7 +14,6 @@ execute:
   warning: false
   message: false
   cache: false
-  freeze: true
 ---
 
 ## Goal
@@ -179,7 +179,7 @@ Here’s a Dockerfile that installs common TeX packages and the fonts needed for
 FROM python:3.12-slim
 
 ENV DEBIAN_FRONTEND=noninteractive \
-  PYTHONUNBUFFERED=1 \
+  PYTHONUNBUFFERED=1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates curl git openssh-client \

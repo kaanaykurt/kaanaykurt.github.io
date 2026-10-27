@@ -8,7 +8,7 @@ format:
 
 ```{=html}
 <section class="teach-wrap">
-  <h2>Lectures</h2>
+  <h2>Courses</h2>
   <div class="teach-grid">
     <div class="teach-card">
       <div class="teach-card-head">
@@ -31,6 +31,7 @@ format:
         <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950801734">SS2025</a>
         <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950840187">WS2025</a>
         <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950881451">SS2026</a>
+        <a class="teach-pill" href="https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/slc.tm.cp/student/courses/950942704">WS2026</a>
       </div>
     </div>
 
@@ -70,7 +71,7 @@ format:
       <span class="thesis-tag tag-master">Master's<br>Thesis</span>
       </li>
       <li>
-      <span class="thesis-title">GNN-based Network Performance Modeling </span>
+      <span class="thesis-title">GNN-based Network Performance Modeling</span>
       <span class="thesis-tag tag-master">Master's<br>Thesis</span>
       </li>
       <li>

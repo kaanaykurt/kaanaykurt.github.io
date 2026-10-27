@@ -57,9 +57,6 @@
         row-gap: 0.75rem;
     }
 
-    .quarto-title-block {
-        padding-left: 0;
-    }
 }
 
 /* =========================
@@ -71,6 +68,12 @@
     margin-left: auto;
     margin-right: auto;
     padding-left: 128px;
+}
+
+@media (max-width: 720px) {
+    .quarto-title-block {
+        padding-left: 0;
+    }
 }
 
 .quarto-title-block .title,
@@ -114,63 +117,63 @@
     /* TUM Blue */
 }
 
-body.theme-dark .pub-card {
+html.theme-dark body .pub-card {
     background: #111827;
     border-color: rgba(148, 163, 184, 0.2);
     border-left-color: #0065bd;
 }
 
-body.theme-dark .pub-title a {
+html.theme-dark body .pub-title a {
     color: #93c5fd;
 }
 
-body.theme-dark .pub-title a:hover {
+html.theme-dark body .pub-title a:hover {
     color: #bfdbfe;
 }
 
 
-body.theme-dark .pub-year-toggle {
+html.theme-dark body .pub-year-toggle {
     background: #111827;
     color: #e5e7eb;
     border-color: rgba(148, 163, 184, 0.2);
 }
 
-body.theme-dark .pub-year-toggle:hover {
+html.theme-dark body .pub-year-toggle:hover {
     background: #1f2937;
 }
 
-body.theme-dark .pub-venue {
+html.theme-dark body .pub-venue {
     color: #94a3b8;
 }
 
-body.theme-dark .pub-pill {
+html.theme-dark body .pub-pill {
     color: #e5e7eb;
     border-color: rgba(148, 163, 184, 0.35);
     background: #0f172a;
 }
 
-body.theme-dark .pub-pill:hover {
+html.theme-dark body .pub-pill:hover {
     color: #93c5fd;
     border-color: #93c5fd;
     background: rgba(147, 197, 253, 0.12);
 }
 
-body.theme-dark .pub-bibtex {
+html.theme-dark body .pub-bibtex {
     color: #e5e7eb;
 }
 
-body.theme-dark .pub-bibtex,
-body.theme-dark .pub-abs-text {
+html.theme-dark body .pub-bibtex,
+html.theme-dark body .pub-abs-text {
     border-color: rgba(148, 163, 184, 0.45);
 }
 
-body.theme-dark .pub-bib-copy {
+html.theme-dark body .pub-bib-copy {
     background: #0f172a;
     color: #e5e7eb;
     border-color: rgba(148, 163, 184, 0.45);
 }
 
-body.theme-dark .pub-bib-copy:hover {
+html.theme-dark body .pub-bib-copy:hover {
     color: #93c5fd;
     border-color: #93c5fd;
     background: rgba(147, 197, 253, 0.12);
@@ -198,13 +201,13 @@ body.theme-dark .pub-bib-copy:hover {
     font-size: 0.8rem;
 }
 
-body.theme-dark .pub-award-badge {
+html.theme-dark body .pub-award-badge {
     background: rgba(245, 158, 11, 0.18);
     color: #fde68a;
     border-color: rgba(245, 158, 11, 0.55);
 }
 
-body.theme-dark .pub-award-badge i {
+html.theme-dark body .pub-award-badge i {
     color: #fbbf24;
 }
 

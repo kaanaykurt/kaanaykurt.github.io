@@ -11,7 +11,8 @@ dependencies = [
     "seaborn>=0.13",
     "pyyaml>=6.0",
 
-    # Notebooks
+    # Jupyter engine for Quarto
     "ipykernel>=7.1",
-    "jupyterlab>=4.5",
+    "nbformat>=5.10",
+    "nbclient>=0.10",
 ]

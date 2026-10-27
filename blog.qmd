@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-page-layout: full
+page-layout: article
 format:
   html:
     css: blog.css
