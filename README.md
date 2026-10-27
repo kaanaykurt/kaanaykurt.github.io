@@ -8,6 +8,7 @@ Source of my personal website, built with [Quarto](https://quarto.org) and serve
 | --- | --- |
 | `index.qmd`, `cv.qmd`, `publications.qmd`, `teaching.qmd`, `blog.qmd` | The pages. Each has a matching `*.css`. |
 | `_data/publications.yml` | All publications. `publications.qmd` and the CV's selected list are rendered from it by `_lib/pubs.py`. |
+| `_lib/postrender.py` | Post-render hook that fixes markup Quarto emits (currently: the invalid `role` on the navbar toggler). |
 | `blogs/<date>_<slug>/blog.qmd` | Blog posts. Python cells are executed once and cached in `_freeze/`. |
 | `theme.scss`, `styles.css`, `fonts/`, `theme-init.html`, `theme-toggle.js` | Theme, self-hosted fonts, and the light/dark toggle. |
 | `docs/` | Rendered site. Committed, because GitHub Pages serves it directly. |

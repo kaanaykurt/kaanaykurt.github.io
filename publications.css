@@ -27,7 +27,7 @@
     border-radius: 12px;
     padding: 10px 14px;
     background: #f7f9fc;
-    color: #111827;
+    color: #1f2a45;
     font-weight: 700;
     letter-spacing: 0.02em;
     display: flex;
@@ -118,7 +118,7 @@
 }
 
 html.theme-dark body .pub-card {
-    background: #111827;
+    background: #1f2a45;
     border-color: rgba(148, 163, 184, 0.2);
     border-left-color: #0065bd;
 }
@@ -133,13 +133,13 @@ html.theme-dark body .pub-title a:hover {
 
 
 html.theme-dark body .pub-year-toggle {
-    background: #111827;
+    background: #1f2a45;
     color: #e5e7eb;
     border-color: rgba(148, 163, 184, 0.2);
 }
 
 html.theme-dark body .pub-year-toggle:hover {
-    background: #1f2937;
+    background: #273352;
 }
 
 html.theme-dark body .pub-venue {
@@ -149,7 +149,7 @@ html.theme-dark body .pub-venue {
 html.theme-dark body .pub-pill {
     color: #e5e7eb;
     border-color: rgba(148, 163, 184, 0.35);
-    background: #0f172a;
+    background: #1c2640;
 }
 
 html.theme-dark body .pub-pill:hover {
@@ -168,7 +168,7 @@ html.theme-dark body .pub-abs-text {
 }
 
 html.theme-dark body .pub-bib-copy {
-    background: #0f172a;
+    background: #1c2640;
     color: #e5e7eb;
     border-color: rgba(148, 163, 184, 0.45);
 }

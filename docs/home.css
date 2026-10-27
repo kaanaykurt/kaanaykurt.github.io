@@ -1,5 +1,5 @@
 :root {
-    --home-ink: #111827;
+    --home-ink: #1f2a45;
     --home-muted: #4b5563;
     --home-accent: #1f4e79;
     --home-panel: #ffffff;
@@ -11,7 +11,7 @@ html.theme-dark body {
     --home-ink: #e5e7eb;
     --home-muted: #94a3b8;
     --home-accent: #93c5fd;
-    --home-panel: #0f172a;
+    --home-panel: #1c2640;
     --home-border: rgba(148, 163, 184, 0.2);
     --home-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
 }
@@ -147,7 +147,7 @@ html.theme-dark body {
 }
 
 html.theme-dark body .home-block {
-    background: #111827;
+    background: #1f2a45;
     border-color: rgba(148, 163, 184, 0.2);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }

@@ -121,7 +121,7 @@ html.theme-dark body {
 }
 
 .cv-section p {
-    color: #1f2937;
+    color: #273352;
     line-height: 1.55;
 }
 
@@ -147,7 +147,7 @@ html.theme-dark body .cv-section p {
 
 .cv-skill-label {
     font-weight: 700;
-    color: #111827;
+    color: #1f2a45;
 }
 
 .cv-skill-text {
@@ -156,7 +156,7 @@ html.theme-dark body .cv-section p {
 }
 
 html.theme-dark body .cv-skill {
-    background: #0f172a;
+    background: #1c2640;
 }
 
 html.theme-dark body .cv-skill-label {
@@ -176,7 +176,7 @@ html.theme-dark body .cv-skill-text {
 }
 
 html.theme-dark body .cv-entry {
-    background: #0f172a;
+    background: #1c2640;
 }
 
 .cv-entry-row {
@@ -201,7 +201,7 @@ html.theme-dark body .cv-entry {
 .cv-entry ul {
     margin: 0;
     padding-left: 1.1rem;
-    color: #1f2937;
+    color: #273352;
     text-align: left;
 }
 
@@ -228,12 +228,12 @@ html.theme-dark body .cv-entry ul {
 .cv-pub-title {
     margin-bottom: 0.25rem;
     font-weight: 700;
-    color: #111827;
+    color: #1f2a45;
 }
 
 .cv-pub-title a {
     font-weight: 700;
-    color: #111827;
+    color: #1f2a45;
     text-decoration: none;
 }
 
@@ -249,11 +249,11 @@ html.theme-dark body .cv-entry ul {
 
 .cv-pub-meta .me {
     font-weight: 700;
-    color: #111827;
+    color: #1f2a45;
 }
 
 html.theme-dark body .cv-pub {
-    background: #0f172a;
+    background: #1c2640;
 }
 
 html.theme-dark body .cv-pub-title {
