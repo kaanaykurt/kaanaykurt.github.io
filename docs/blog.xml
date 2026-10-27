@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Kaan Aykurt – Blog</title>
+<link>https://kaanaykurt.me/blog.html</link>
+<atom:link href="https://kaanaykurt.me/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Notes on networking, AI for networks, and reproducible research tooling.</description>
+<image>
+<url>https://kaanaykurt.me/files/profile.jpeg</url>
+<title>Kaan Aykurt – Blog</title>
+<link>https://kaanaykurt.me/blog.html</link>
+</image>
+<generator>quarto-1.8.27</generator>
+<lastBuildDate>Mon, 26 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Generating publication-quality figures</title>
+  <link>https://kaanaykurt.me/blogs/2026-01-26_publication-quality-figures/blog.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<p>This post walks through a simple, <strong>reproducible workflow for generating publication-quality figures</strong> using Matplotlib.</p>
+<p>One of the most common (and honestly most distracting) issues I run into when reading papers is poorly formatted figures: tiny fonts, stretched labels, and inconsistent styling.</p>
+<p>In my experience, the root cause usually comes down to two things:</p>
+<ol type="1">
+<li><p>Figures are created with the wrong size and then resized later</p></li>
+<li><p>Fonts aren’t rendered properly in the first place</p></li>
+</ol>
+<p>Both issues are completely avoidable, yet they are still very common in many publications. In this post, I’ll show a Docker-based approach that takes care of the annoying setup details and dependencies, so you can render figures with proper LaTeX fonts and correct sizing. If you care about clean, professional-looking plots, this workflow will save you a lot of frustration.</p>
+<hr>
+</section>
+<section id="get-image-sizes-right" class="level2">
+<h2 class="anchored" data-anchor-id="get-image-sizes-right">1) Get image sizes right</h2>
+<p>First, figure out how much space your figure actually gets in the paper. Guessing here is how you end up with tiny fonts or awkward rescaling later.</p>
+<section id="quick-diagnostic-check" class="level3">
+<h3 class="anchored" data-anchor-id="quick-diagnostic-check">Quick diagnostic check</h3>
+<p>If you want the exact column width of your LaTeX template (down to the point), temporarily drop this into your document and compile:</p>
+<ul>
+<li><code>The column width is: \the\columnwidth</code></li>
+</ul>
+<p>This will print something like <strong>252.0pt</strong> directly into the PDF.</p>
+<p>Divide by <strong>72.27</strong> to convert points to inches (TeX uses <strong>72.27 points = 1 inch</strong>).</p>
+<p>Matplotlib’s native unit for figure size is inches, so you can directly map this value to:</p>
+<ul>
+<li><code>figure.figsize = (width_in, height_in)</code></li>
+</ul>
+</section>
+<section id="practical-defaults" class="level3">
+<h3 class="anchored" data-anchor-id="practical-defaults">Practical defaults</h3>
+<p><strong>Width</strong></p>
+<ul>
+<li><strong>IEEE</strong>: ~3.49 in (single column), ~7.14 in (double column)</li>
+<li><strong>ACM</strong>: ~3.34 in (single column), ~7 in (double column)</li>
+</ul>
+<p><strong>Height</strong>:</p>
+<ul>
+<li>Choose a reasonable aspect ratio</li>
+<li>The golden ratio often produces visually pleasing results in practice</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="render-text-with-latex-and-use-the-right-preamble" class="level2">
+<h2 class="anchored" data-anchor-id="render-text-with-latex-and-use-the-right-preamble">2) Render text with LaTeX (and use the right preamble)</h2>
+<p>If you’re writing your paper in LaTeX, the most consistent way to match fonts is:</p>
+<ul>
+<li><code>text.usetex: True</code></li>
+<li><code>text.latex.preamble</code>: your venue-specific preamble</li>
+</ul>
+<p>Good defaults:</p>
+<ul>
+<li>Modest font sizes (9–10 pt) that match the paper.</li>
+<li>Legend slightly smaller.</li>
+</ul>
+<p>Below are two example preambles (ACM vs IEEE-style). Pick one.</p>
+<div id="b00ce7d2" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> math</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span></code></pre></div></div>
+</details>
+</div>
+<div id="e504710e" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Target figure size (inches)</span></span>
+<span id="cb2-2">fig_width <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3.34</span></span>
+<span id="cb2-3">fig_height <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> fig_width <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (math.sqrt(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.0</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2.0</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># golden ratio</span></span>
+<span id="cb2-4"></span>
+<span id="cb2-5">font_size <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span></span>
+<span id="cb2-6">legend_font_size <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span></span>
+<span id="cb2-7"></span>
+<span id="cb2-8">ACM_PREAMBLE <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [</span>
+<span id="cb2-9">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[T1]</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{fontenc}"</span>,</span>
+<span id="cb2-10">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[tt=false,type1=true]</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{libertine}"</span>,</span>
+<span id="cb2-11">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[varqu]</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{zi4}"</span>,</span>
+<span id="cb2-12">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[libertine]</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{newtxmath}"</span>,</span>
+<span id="cb2-13">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage{amsmath}"</span>,</span>
+<span id="cb2-14">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage{siunitx}"</span>,</span>
+<span id="cb2-15">]</span>
+<span id="cb2-16"></span>
+<span id="cb2-17">IEEE_PREAMBLE <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [</span>
+<span id="cb2-18">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[T1]</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">{fontenc}"</span>,</span>
+<span id="cb2-19">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage{mathptmx}"</span>,</span>
+<span id="cb2-20">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage{amsmath}"</span>,</span>
+<span id="cb2-21">    <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">usepackage{siunitx}"</span>,</span>
+<span id="cb2-22">]</span>
+<span id="cb2-23"></span>
+<span id="cb2-24">params <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb2-25">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"axes.labelsize"</span>: font_size,</span>
+<span id="cb2-26">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"axes.titlesize"</span>: font_size,</span>
+<span id="cb2-27">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"axes.linewidth"</span>: <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.0</span>,</span>
+<span id="cb2-28">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"font.size"</span>: font_size,</span>
+<span id="cb2-29">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"legend.fontsize"</span>: legend_font_size,</span>
+<span id="cb2-30">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"xtick.labelsize"</span>: font_size,</span>
+<span id="cb2-31">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ytick.labelsize"</span>: font_size,</span>
+<span id="cb2-32">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"figure.figsize"</span>: [fig_width, fig_height],</span>
+<span id="cb2-33">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lines.linewidth"</span>: <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.0</span>,</span>
+<span id="cb2-34"></span>
+<span id="cb2-35">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"pdf.fonttype"</span>: <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>,</span>
+<span id="cb2-36">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ps.fonttype"</span>: <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>,</span>
+<span id="cb2-37">    </span>
+<span id="cb2-38">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"text.usetex"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb2-39"></span>
+<span id="cb2-40">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Choose ONE style:</span></span>
+<span id="cb2-41">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"text.latex.preamble"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>.join(ACM_PREAMBLE),</span>
+<span id="cb2-42">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># "text.latex.preamble": "\n".join(IEEE_PREAMBLE),</span></span>
+<span id="cb2-43">}</span>
+<span id="cb2-44"></span>
+<span id="cb2-45">plt.rcParams.update(params)</span></code></pre></div></div>
+</details>
+</div>
+<hr>
+</section>
+<section id="example-figure" class="level2">
+<h2 class="anchored" data-anchor-id="example-figure">3) Example figure</h2>
+<p>For publications, prefer <strong>PDF</strong> for LaTeX workflows.</p>
+<div id="4363dbcd" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.linspace(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">400</span>)</span>
+<span id="cb3-2"></span>
+<span id="cb3-3">fig, ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots()</span>
+<span id="cb3-4">ax.plot(x, np.sin(x), label<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$\s</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">in</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">(</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">x</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">)</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb3-5">ax.set_xlabel(<span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">x</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb3-6">ax.set_ylabel(<span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r"</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">y</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb3-7">ax.legend(frameon<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb3-8"></span>
+<span id="cb3-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Adjust layout manually</span></span>
+<span id="cb3-10">fig.subplots_adjust(left<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.17</span>, bottom<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, right<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.98</span>, top<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.98</span>)</span>
+<span id="cb3-11"></span>
+<span id="cb3-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Save</span></span>
+<span id="cb3-13">fig.savefig(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"fig.pdf"</span>)</span>
+<span id="cb3-14"></span>
+<span id="cb3-15">plt.show()</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://kaanaykurt.me/blogs/2026-01-26_publication-quality-figures/blog_files/figure-html/cell-4-output-1.png" width="330" height="213" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="notes" class="level3">
+<h3 class="anchored" data-anchor-id="notes">Notes</h3>
+<ul>
+<li>Avoid <code>bbox_inches="tight"</code> for paper figures. It recalculates the bounding box to fit all elements (labels, titles, legends) tightly, often resulting in a different-sized image than expected!</li>
+<li>Use <code>fig.subplots_adjust(...)</code> to control margins explicitly and keep sizing stable.</li>
+<li>Jupyter displays figures via an inline backend different than <code>fig.savefig()</code>. Each backend computes text extents (titles, labels, ticks) differently. Always inspect the exported PDF, not just the notebook output.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="make-it-reproducible-with-docker" class="level2">
+<h2 class="anchored" data-anchor-id="make-it-reproducible-with-docker">4) Make it reproducible with Docker</h2>
+<p>LaTeX + fonts are the usual source of “works on my machine” problems. Docker removes that.</p>
+<section id="dockerfile" class="level3">
+<h3 class="anchored" data-anchor-id="dockerfile">Dockerfile</h3>
+<p>Here’s a Dockerfile that installs common TeX packages and the fonts needed for the preambles above:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode dockerfile code-with-copy"><code class="sourceCode dockerfile"><span id="cb4-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">FROM</span> python:3.12-slim</span>
+<span id="cb4-2"></span>
+<span id="cb4-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">ENV</span> DEBIAN_FRONTEND=noninteractive <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-4">  PYTHONUNBUFFERED=1</span>
+<span id="cb4-5"></span>
+<span id="cb4-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">RUN</span> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">apt-get</span> update <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">&amp;&amp;</span> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">apt-get</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-y</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--no-install-recommends</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-7">  ca-certificates curl git openssh-client <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-8">  fontconfig <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-9">  fonts-linuxlibertine <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-10">  texlive-xetex <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-11">  texlive-latex-base <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-12">  texlive-latex-recommended <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-13">  texlive-latex-extra <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-14">  texlive-fonts-recommended <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-15">  texlive-fonts-extra <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-16">  texlive-science <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-17">  texlive-plain-generic <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-18">  latexmk <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-19">  libfreetype6 <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-20">  libpng16-16 <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-21">  cm-super dvipng dvisvgm ghostscript <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-22">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">&amp;&amp;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rm</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-rf</span> /var/lib/apt/lists/<span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">*</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb4-23">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">&amp;&amp;</span> <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">fc-cache</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-f</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-v</span></span></code></pre></div></div>
+<hr>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ul>
+<li>Pick a target physical width that matches your paper column.</li>
+<li>Set <code>rcParams</code> once, including a venue-specific LaTeX preamble.</li>
+<li>Export PDF image.</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>matplotlib</category>
+  <category>latex</category>
+  <category>docker</category>
+  <category>reproducibility</category>
+  <guid>https://kaanaykurt.me/blogs/2026-01-26_publication-quality-figures/blog.html</guid>
+  <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

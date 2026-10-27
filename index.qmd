@@ -9,6 +9,34 @@ page-layout: full
 format:
   html:
     css: home.css
+    include-in-header:
+      - text: |
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Kaan Aykurt",
+            "url": "https://kaanaykurt.me/",
+            "image": "https://kaanaykurt.me/files/profile.jpeg",
+            "jobTitle": "PhD Candidate",
+            "affiliation": {
+              "@type": "Organization",
+              "name": "Chair of Communication Networks, Technical University of Munich",
+              "url": "https://www.ce.cit.tum.de/en/lkn/home/"
+            },
+            "alumniOf": [
+              { "@type": "CollegeOrUniversity", "name": "Technical University of Munich" },
+              { "@type": "CollegeOrUniversity", "name": "Koç University" }
+            ],
+            "knowsAbout": ["Communication networks", "Large language models for network management", "Distributed machine learning", "Network measurement"],
+            "sameAs": [
+              "https://orcid.org/0000-0002-8254-0080",
+              "https://scholar.google.com/citations?user=7o2xaGsAAAAJ",
+              "https://github.com/kaanaykurt",
+              "https://www.linkedin.com/in/kaanaykurt/"
+            ]
+          }
+          </script>
 ---
 
 ```{=html}
@@ -22,7 +50,7 @@ format:
       <div class="home-section">
         <h2>About</h2>
         <p style="text-align: left;">
-          I am Kaan, a PhD candidate (since 2022) at the <a href="https://www.ce.cit.tum.de/en/lkn/home/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Chair of Communication Networks</a> led by <a href="https://www.ce.cit.tum.de/en/lkn/team/staff/kellerer-wolfgang/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Prof. Wolfgang Kellerer</a>. My research spans <strong>AI for Networking</strong> and <strong>Networking for AI</strong>. I work on reproducible evaluation frameworks for LLMs in networking and investigate communication as a bottleneck in large-scale AI/ML systems.
+          I am Kaan, a fourth-year PhD student at the <a href="https://www.ce.cit.tum.de/en/lkn/home/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Chair of Communication Networks</a> led by <a href="https://www.ce.cit.tum.de/en/lkn/team/staff/kellerer-wolfgang/" style="color: inherit; text-decoration: underline dashed; text-decoration-color: #6b6b6b;">Prof. Wolfgang Kellerer</a>. My research spans <strong>AI for Networking</strong> and <strong>Networking for AI</strong>. I work on reproducible evaluation frameworks for LLMs in networking and investigate communication as a bottleneck in large-scale AI/ML systems.
         </p>
       </div>
 

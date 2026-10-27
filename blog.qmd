@@ -6,6 +6,9 @@ format:
     css: blog.css
 listing:
   contents: "blogs/**/blog.qmd"
+  feed:
+    title: "Kaan Aykurt – Blog"
+    description: "Notes on networking, AI for networks, and reproducible research tooling."
   type: default
   sort: "date desc"
   page-size: 10

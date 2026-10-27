@@ -11,6 +11,15 @@ import yaml
 
 ME = "K. Aykurt"
 
+# Optional per-entry resources, shown as small links on the venue line: (yaml key, label, icon).
+# The pill row below stays the same on every card: Publisher, Abstract, BibTeX.
+RESOURCES = [
+    ("code", "Code", "bi-github"),
+    ("slides", "Slides", "bi-easel"),
+    ("poster", "Poster", "bi-image"),
+    ("video", "Video", "bi-play-circle"),
+]
+
 
 def load(path="_data/publications.yml"):
     return yaml.safe_load(Path(path).read_text(encoding="utf-8"))
@@ -47,9 +56,24 @@ def _card(pub, n):
     out = [
         '<div class="pub-card">',
         f'<div class="pub-title">{_title(pub)}</div>',
-        f'<div class="pub-authors">{_authors(pub["authors"])}</div>',
-        f'<div class="pub-venue">{_venue(pub)}</div>',
+        *([f'<div class="pub-authors">{_authors(pub["authors"])}</div>'] if pub.get("authors") else []),
     ]
+    resources = "".join(
+        f'<a class="pub-resource" href="{_esc(pub[key])}" target="_blank" rel="noopener">'
+        f'<i class="bi {icon}" aria-hidden="true"></i> {label}</a>'
+        for key, label, icon in RESOURCES
+        if pub.get(key)
+    )
+    out.append(
+        f'<div class="pub-meta-row"><div class="pub-venue">{_venue(pub)}</div>'
+        + (f'<div class="pub-resources">{resources}</div>' if resources else "")
+        + "</div>"
+    )
+    if pub.get("award"):
+        out.append(
+            f'<div class="pub-award-badge" aria-label="{_esc(pub["award"])} award">'
+            f'<i class="bi bi-trophy-fill" aria-hidden="true"></i> {_esc(pub["award"])}</div>'
+        )
     row, panels = [], []
     if pub.get("publisher"):
         row.append(
@@ -127,7 +151,7 @@ def selected_html(pubs):
         out.append(
             '<div class="cv-pub">'
             f'<div class="cv-pub-title">{_title(pub)}</div>'
-            f'<div class="cv-pub-meta">{_authors(pub["authors"])}. {_venue(pub)}.</div>'
+            f'<div class="cv-pub-meta">{(_authors(pub["authors"]) + ". ") if pub.get("authors") else ""}{_venue(pub)}.</div>'
             "</div>"
         )
     out.append("</div>")

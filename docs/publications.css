@@ -229,14 +229,52 @@ html.theme-dark body .pub-award-badge i {
    Venue / year
    ========================= */
 
+.pub-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
 .pub-venue {
     font-family: "Fira Mono", monospace;
     font-size: 0.9rem;
     color: #6b7280;
-    margin-bottom: 12px;
 }
 
-.pub-venue+.pub-award-badge {
+/* Extra resources (code, slides, ...) sit on the venue line so the pill row stays uniform. */
+.pub-resources {
+    display: inline-flex;
+    gap: 14px;
+    margin-left: auto;
+}
+
+.pub-resource {
+    font-family: "Fira Mono", monospace;
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.pub-resource:hover {
+    color: #0065bd;
+}
+
+html.theme-dark body .pub-resource {
+    color: #94a3b8;
+}
+
+html.theme-dark body .pub-resource:hover {
+    color: #93c5fd;
+}
+
+.pub-meta-row+.pub-award-badge {
     margin-top: -6px;
 }
 
