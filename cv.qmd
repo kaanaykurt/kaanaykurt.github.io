@@ -4,6 +4,10 @@ page-layout: full
 format:
   html:
     css: cv.css
+    include-in-header:
+      - text: |
+          <meta name="description" content="Curriculum vitae of Kaan Aykurt: research experience, education, technical skills and selected publications, with a PDF version.">
+          <meta property="og:description" content="Curriculum vitae of Kaan Aykurt: research experience, education, technical skills and selected publications, with a PDF version.">
 jupyter: python3
 execute:
   echo: false

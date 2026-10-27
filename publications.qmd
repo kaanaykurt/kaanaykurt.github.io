@@ -4,6 +4,10 @@ page-layout: full
 format:
   html:
     css: publications.css
+    include-in-header:
+      - text: |
+          <meta name="description" content="Publications by Kaan Aykurt on LLM agents for network management, network measurement, reconfigurable data centers and autoscaling, with abstracts, BibTeX and PDFs.">
+          <meta property="og:description" content="Publications by Kaan Aykurt on LLM agents for network management, network measurement, reconfigurable data centers and autoscaling, with abstracts, BibTeX and PDFs.">
 jupyter: python3
 execute:
   echo: false

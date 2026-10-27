@@ -4,6 +4,10 @@ page-layout: article
 format:
   html:
     css: blog.css
+    include-in-header:
+      - text: |
+          <meta name="description" content="Blog of Kaan Aykurt: notes on networking, AI for networks and reproducible research tooling.">
+          <meta property="og:description" content="Blog of Kaan Aykurt: notes on networking, AI for networks and reproducible research tooling.">
 listing:
   contents: "blogs/**/blog.qmd"
   feed:

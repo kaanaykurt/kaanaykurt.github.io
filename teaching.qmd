@@ -4,6 +4,10 @@ page-layout: full
 format:
   html:
     css: teaching.css
+    include-in-header:
+      - text: |
+          <meta name="description" content="Courses and supervised theses of Kaan Aykurt at the Chair of Communication Networks, TU Munich.">
+          <meta property="og:description" content="Courses and supervised theses of Kaan Aykurt at the Chair of Communication Networks, TU Munich.">
 ---
 
 ```{=html}

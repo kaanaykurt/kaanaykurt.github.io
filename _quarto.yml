@@ -46,5 +46,10 @@ format:
     css:
       - fonts.css
       - styles.css
-    include-in-header: theme-init.html
+    include-in-header:
+      - theme-init.html
+      - text: |
+          <link rel="preload" as="font" type="font/woff2" href="/fonts/lato-400-latin.woff2" crossorigin>
+          <link rel="preload" as="font" type="font/woff2" href="/fonts/lato-700-latin.woff2" crossorigin>
+          <link rel="preload" as="font" type="font/woff2" href="/fonts/fira-mono-400-latin.woff2" crossorigin>
     include-after-body: theme-toggle.html

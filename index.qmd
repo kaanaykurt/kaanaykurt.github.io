@@ -1,6 +1,7 @@
 ---
 title: ""
 pagetitle: "Kaan Aykurt"
+image: files/profile.jpeg
 open-graph:
   title: "Kaan Aykurt"
 twitter-card:
@@ -10,6 +11,10 @@ format:
   html:
     css: home.css
     include-in-header:
+      - text: |
+          <meta name="description" content="Kaan Aykurt, PhD candidate at the Chair of Communication Networks, TU Munich, working on AI for networking and networking for AI.">
+          <link rel="preload" as="image" href="files/profile.webp">
+          <meta property="og:description" content="Kaan Aykurt, PhD candidate at the Chair of Communication Networks, TU Munich, working on AI for networking and networking for AI.">
       - text: |
           <script type="application/ld+json">
           {
@@ -103,7 +108,7 @@ format:
     </div>
 
     <aside class="home-side">
-      <img class="home-avatar" src="files/profile.jpeg" alt="Portrait of Kaan Aykurt">
+      <img class="home-avatar" src="files/profile.webp" width="400" height="400" fetchpriority="high" alt="Portrait of Kaan Aykurt">
       <div class="home-location">
         <i class="bi bi-bank" aria-hidden="true"></i>
         <span>TU Munich</span>
