@@ -8,7 +8,6 @@
   venue: Manuscript under review
   year: 2025
   status: preprint
-  selected: true
 - key: deshpande2026clocksync
   title: Improving Network Clock Synchronization by Marking Congestion
   authors:
@@ -56,6 +55,7 @@
       booktitle={2026 IEEE Global Communications Conference (GLOBECOM)},
       year={2026}
     }
+  selected: true
 - key: steininger2025l4s
   title: Performance Evaluation of L4S in XR Scenarios
   authors:
