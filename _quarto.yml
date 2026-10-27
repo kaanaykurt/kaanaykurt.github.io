@@ -38,6 +38,7 @@ website:
 
 format:
   html:
+    canonical-url: true
     toc: true
     mainfont: "Lato"
     monofont: "Fira Mono"
