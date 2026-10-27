@@ -1,8 +1,11 @@
 {
     "name": "website",
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "dev",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
     "workspaceFolder": "/workspaces/website",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/website,type=bind,consistency=cached",
     "containerEnv": {
         "QUARTO_PYTHON": "/usr/local/bin/python3"
     },
