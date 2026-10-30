@@ -186,7 +186,8 @@ html.theme-dark body .cv-entry {
     font-weight: 700;
 }
 
-.cv-entry-date {
+.cv-entry-date,
+.cv-entry-place {
     color: var(--cv-muted);
     font-weight: 600;
     white-space: nowrap;
@@ -196,6 +197,21 @@ html.theme-dark body .cv-entry {
     color: var(--cv-muted);
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
+}
+
+/* Role line under an institution, as in the PDF: italic title, dates on the right */
+.cv-entry-position {
+    font-weight: 400;
+    margin-top: 0.2rem;
+    margin-bottom: 0.35rem;
+}
+
+.cv-entry-title {
+    font-style: italic;
+}
+
+.cv-entry ul + .cv-entry-position {
+    margin-top: 0.75rem;
 }
 
 .cv-entry ul {
@@ -277,10 +293,28 @@ html.theme-dark body .cv-pub-meta .me {
     color: #e5e7eb;
 }
 
+.cv-awards {
+    margin-top: 0.7rem;
+}
+
+.cv-award-icon {
+    color: #f59e0b;
+    margin-right: 0.4rem;
+}
+
+html.theme-dark body .cv-award-icon {
+    color: #fbbf24;
+}
+
 @media (max-width: 700px) {
     .cv-entry-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.1rem;
+    }
+
+    .cv-entry-position {
+        margin-top: 0.45rem;
     }
 
     .cv-skill {

@@ -162,7 +162,6 @@
       pages={1372-1386},
       doi={10.1109/TNSM.2023.3327508}
     }
-  selected: true
 - key: aykurt2023autonomous
   title: Autonomous Network Management in Multi-Domain 6G Networks Based on Graph Neural Networks
   authors:
@@ -237,6 +236,7 @@
       pages={127-135},
       doi={10.23919/CNSM55787.2022.9964863}
     }
+  selected: true
 - key: zerwas2021dml
   title: Network Traffic Characteristics of Machine Learning Frameworks Under the Microscope
   authors:

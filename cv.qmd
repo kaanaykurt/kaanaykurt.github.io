@@ -6,8 +6,8 @@ format:
     css: cv.css
     include-in-header:
       - text: |
-          <meta name="description" content="Curriculum vitae of Kaan Aykurt: research experience, education, technical skills and selected publications, with a PDF version.">
-          <meta property="og:description" content="Curriculum vitae of Kaan Aykurt: research experience, education, technical skills and selected publications, with a PDF version.">
+          <meta name="description" content="Curriculum vitae of Kaan Aykurt: research experience, technical skills, education, selected publications and awards, with a PDF version.">
+          <meta property="og:description" content="Curriculum vitae of Kaan Aykurt: research experience, technical skills, education, selected publications and awards, with a PDF version.">
 jupyter: python3
 execute:
   echo: false
@@ -28,10 +28,9 @@ execute:
   </header>
 
   <div class="cv-section">
-    <h2>Research Profile</h2>
+    <h2>Summary</h2>
     <p style="text-align: left;">
-      PhD candidate working at the intersection of <strong>AI for Networking</strong> and
-      <strong>Networking for AI</strong>. I design agentic LLM workflows and benchmarking frameworks for autonomous networks, and study communication bottlenecks in large-scale AI/ML systems. My expertise includes reproducible benchmarking on hardware testbeds, transport layer analysis, and network modeling with Graph Neural Networks.
+      PhD candidate specializing in <strong>AI for Networking</strong> and <strong>Networking for AI</strong>. I build agentic frameworks and benchmarks for autonomous network operations with Large Language Models (LLMs), and investigate the networking requirements of large-scale AI/ML workloads.
     </p>
   </div>
 
@@ -41,66 +40,43 @@ execute:
     <div class="cv-entry">
       <div class="cv-entry-row">
         <div class="cv-entry-role">Chair of Communication Networks, Technical University of Munich</div>
-        <div class="cv-entry-date">2022 – Now</div>
+        <div class="cv-entry-place">Munich, Germany</div>
       </div>
-      <div class="cv-entry-meta">Research and Teaching Assistant, Munich, Germany</div>
+      <div class="cv-entry-row cv-entry-position">
+        <div class="cv-entry-title">Doctoral Researcher</div>
+        <div class="cv-entry-date">2022 – present</div>
+      </div>
       <ul>
-        <li>Developing agentic workflows for network troubleshooting, implementing the Model Context Protocol (MCP) for tool calling to interact with network emulators.</li>
-        <li>Designed NetLLMBench, a reproducible benchmarking framework using Python and LangChain to evaluate LLM agents on network configuration tasks.</li>
-        <li>Built and operated a Kubernetes experimental cluster and developed a custom pod autoscaler (HyPA) to optimize resource provisioning.</li>
-        <li>Ranked 3rd in the GNNet2023 Challenge by designing Graph Neural Networks (GNNs) in PyTorch to predict latency on real-world datasets.</li>
-        <li>Conducted hardware testbed measurements of TCP/IP and QUIC to analyze congestion dynamics in high-throughput applications.</li>
+        <li>Measuring how close TCP gets to RoCE for LLM serving and fine-tuning on Ethernet GPU clusters, showing that it stays within 4% of RoCE in pipeline-parallel serving.</li>
+        <li>Distilling small language models to assess their improvement potential for autonomous network management, nearly tripling their success rate on operational networking tasks.</li>
+        <li>Built RouteMind, an LLM agent framework that generates BGP configurations and negotiates routing policy between autonomous systems in emulated networks.</li>
+        <li>Designed NetLLMBench, an open benchmark that checks LLM-generated network configurations in emulation.</li>
+        <li>Analyzed on a hardware testbed how TCP and QUIC behave when data center networks are reconfigured at runtime, and predicted the resulting slowdowns with an ML model that explains 88% of their variance.</li>
+        <li>Built and operated a Kubernetes experimental cluster and developed HyPA, a pod autoscaler that adapts to changing request patterns.</li>
+        <li>Redesigned the Programmable Communication Networks Lab around containerlab, infrastructure-as-code automation and a class-wide mini-internet project; supervised seven student theses and research projects.</li>
       </ul>
-    </div>
-
-    <div class="cv-entry">
-      <div class="cv-entry-row">
-        <div class="cv-entry-role">Chair of Communication Networks, Technical University of Munich</div>
+      <div class="cv-entry-row cv-entry-position">
+        <div class="cv-entry-title">Working Student</div>
         <div class="cv-entry-date">2020 – 2022</div>
       </div>
-      <div class="cv-entry-meta">Working Student, Munich, Germany</div>
       <ul>
-        <li>Characterized traffic patterns of distributed training workloads (PyTorch DDP, MPI) to evaluate synchronization performance across RoCE and standard Ethernet.</li>
-        <li>Modeled TCP congestion behavior in reconfigurable data centers to predict flow completion times and quantify topology switching impact.</li>
+        <li>Characterized the network traffic of distributed ML training (PyTorch, MPI) and compared RoCE with TCP.</li>
+        <li>Applied genetic algorithms to adversarial benchmarking of data center networks and Kubernetes clusters, generating worst-case workloads that maximize flow completion times and degrade service performance.</li>
       </ul>
     </div>
 
     <div class="cv-entry">
       <div class="cv-entry-row">
         <div class="cv-entry-role">IBM</div>
+        <div class="cv-entry-place">Istanbul, Türkiye</div>
+      </div>
+      <div class="cv-entry-row cv-entry-position">
+        <div class="cv-entry-title">IT Specialist</div>
         <div class="cv-entry-date">2018 – 2019</div>
       </div>
-      <div class="cv-entry-meta">IT Specialist, Istanbul, Türkiye</div>
       <ul>
-        <li>Implemented automation workflows using Bash scripting and configured enterprise monitoring dashboards for operational insights.</li>
+        <li>Worked on the server monitoring stack of a top-three Turkish bank with IBM Tivoli Netcool and Grafana.</li>
       </ul>
-    </div>
-  </div>
-
-  <div class="cv-section">
-    <h2>Education</h2>
-    <div class="cv-entry">
-      <div class="cv-entry-row">
-        <div class="cv-entry-role">Technical University of Munich (TUM)</div>
-        <div class="cv-entry-date">2022 – Now</div>
-      </div>
-      <div class="cv-entry-meta">PhD Computer Engineering (Advisor: Prof. Dr.-Ing. Wolfgang Kellerer)</div>
-    </div>
-
-    <div class="cv-entry">
-      <div class="cv-entry-row">
-        <div class="cv-entry-role">Technical University of Munich (TUM)</div>
-        <div class="cv-entry-date">2019 – 2022</div>
-      </div>
-      <div class="cv-entry-meta">M.Sc. Communications Engineering</div>
-    </div>
-
-    <div class="cv-entry">
-      <div class="cv-entry-row">
-        <div class="cv-entry-role">Koc University</div>
-        <div class="cv-entry-date">2014 – 2019</div>
-      </div>
-      <div class="cv-entry-meta">B.Sc. Electrical &amp; Electronics Engineering | B.A. Economics</div>
     </div>
   </div>
 
@@ -109,21 +85,52 @@ execute:
     <div class="cv-skill-grid">
       <div class="cv-skill">
         <span class="cv-skill-label">AI &amp; ML</span>
-        <span class="cv-skill-text">Python, PyTorch, Distributed Fine-Tuning, Hugging Face (Accelerate, PEFT/LoRA), vLLM </span>
+        <span class="cv-skill-text">Python, PyTorch, Hugging Face, vLLM, Distributed Training, LoRA Fine-Tuning, LLM Agents, MCP</span>
       </div>
       <div class="cv-skill">
         <span class="cv-skill-label">Networking</span>
-        <span class="cv-skill-text">C++, RDMA (InfiniBand/RoCE), P4, eBPF, ns-3, Mininet, TCP/IP</span>
+        <span class="cv-skill-text">TCP/IP, BGP, OSPF, RDMA, RoCE, InfiniBand, NCCL, P4, FRR, Containerlab</span>
       </div>
       <div class="cv-skill">
         <span class="cv-skill-label">Infrastructure</span>
-        <span class="cv-skill-text">Docker, Kubernetes, Helm, Linux, Bash, Git, GitLab CI</span>
+        <span class="cv-skill-text">Linux, Docker, Kubernetes, Helm, Git, GitLab CI, Prometheus, Grafana</span>
+      </div>
+      <div class="cv-skill">
+        <span class="cv-skill-label">Languages</span>
+        <span class="cv-skill-text">Turkish (native), English (fluent), German (intermediate)</span>
       </div>
     </div>
   </div>
 
   <div class="cv-section">
-    <h2>Selected Publications</h2>
+    <h2>Education</h2>
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Technical University of Munich, Germany</div>
+        <div class="cv-entry-date">Expected 2027</div>
+      </div>
+      <div class="cv-entry-meta">Ph.D. in Computer Engineering (Advisor: Prof. Wolfgang Kellerer)</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Technical University of Munich, Germany</div>
+        <div class="cv-entry-date">2022</div>
+      </div>
+      <div class="cv-entry-meta">M.Sc. in Communications Engineering</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-row">
+        <div class="cv-entry-role">Koç University, Istanbul, Türkiye</div>
+        <div class="cv-entry-date">2019</div>
+      </div>
+      <div class="cv-entry-meta">B.Sc. in Electrical &amp; Electronics Engineering and B.A. in Economics (Double Major)</div>
+    </div>
+  </div>
+
+  <div class="cv-section">
+    <h2>Selected Publications &amp; Awards</h2>
 ```
 
 ```{python}
@@ -135,6 +142,16 @@ print("```{=html}\n" + selected_html(load()) + "\n```")
 ```
 
 ```{=html}
+    <div class="cv-pubs cv-awards">
+      <div class="cv-pub">
+        <div class="cv-pub-title"><i class="bi bi-trophy-fill cv-award-icon" aria-hidden="true"></i>3rd Place, Graph Neural Networking Challenge</div>
+        <div class="cv-pub-meta">ITU AI/ML in 5G Challenge, 2023</div>
+      </div>
+      <div class="cv-pub">
+        <div class="cv-pub-title"><i class="bi bi-trophy-fill cv-award-icon" aria-hidden="true"></i>Best Student Paper Award</div>
+        <div class="cv-pub-meta">IEEE CNSM, 2022</div>
+      </div>
+    </div>
   </div>
 </section>
 ```
